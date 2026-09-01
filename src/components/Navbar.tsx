@@ -85,30 +85,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </button>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {navItems.map((item) => {
-              const isActive = currentPage === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  id={`nav-link-${item.id}`}
-                  className={`px-3.5 py-2 text-xs font-medium uppercase tracking-wider transition-colors flex items-center space-x-1.5 border-b-2 ${
-                    isActive
-                      ? 'border-[#002b49] text-[#002b49] font-bold bg-slate-200/50'
-                      : 'border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-200/30'
-                  }`}
-                >
-                  <span className="font-mono text-[10px] text-slate-400">
-                    {item.docCode}.
-                  </span>
-                  <span>{item.label}</span>
-                </button>
-              );
-            })}
-          </nav>
-
           {/* CTA Action Buttons */}
           <div className="hidden sm:flex items-center space-x-3">
             <button
@@ -144,6 +120,28 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         </div>
       </div>
+
+      {/* Desktop Nav Directory Strip */}
+      <nav className="hidden lg:grid grid-cols-7 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-[#dbe2ea] bg-[#f7f5ef]">
+        {navItems.map((item) => {
+          const isActive = currentPage === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              id={`nav-link-${item.id}`}
+              className={`whitespace-nowrap px-2 py-3 text-[11px] xl:text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-1.5 border-r border-slate-200 last:border-r-0 border-b-2 transition-colors ${
+                isActive
+                  ? 'border-b-[#002b49] text-[#002b49] font-bold bg-slate-200/60'
+                  : 'border-b-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-200/30'
+              }`}
+            >
+              <span className="font-mono text-[10px] text-slate-400 hidden xl:inline">{item.docCode}.</span>
+              <span>{item.label}</span>
+            </button>
+          );
+        })}
+      </nav>
 
       {/* Mobile Nav Dropdown */}
       {mobileMenuOpen && (
