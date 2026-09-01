@@ -51,6 +51,18 @@
   border-color: #cbd5e1;
 }
 
+/* Mobile & iPad friendliness — prevent iOS Safari auto-zoom on small inputs */
+@media (max-width: 640px) {
+  input:not([type='checkbox']):not([type='radio']):not([type='file']), select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Remove grey tap-flash on touch devices */
+button, a, label, [role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Custom scrollbar for blueprint feel */
 ::-webkit-scrollbar {
   width: 6px;

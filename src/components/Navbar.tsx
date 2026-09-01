@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-[#F4F2ED]/95 backdrop-blur-md border-b border-[#cbd5e1] transition-all">
       {/* Top Engineering Micro-Bar */}
-      <div className="border-b border-[#e2e8f0] bg-[#ebe7df] px-4 py-1 text-[11px] font-mono text-[#475569] hidden md:flex items-center justify-between">
+      <div className="border-b border-[#e2e8f0] bg-[#ebe7df] px-4 py-1 text-[11px] font-mono text-[#475569] hidden lg:flex items-center justify-between">
         <div className="flex items-center space-x-6">
           <span className="flex items-center space-x-2">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>

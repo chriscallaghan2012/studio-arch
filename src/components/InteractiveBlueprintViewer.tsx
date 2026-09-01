@@ -117,7 +117,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
         </div>
 
         {/* Layer Filters */}
-        <div className="flex items-center space-x-2 text-[11px]">
+        <div className="flex flex-wrap items-center gap-2 text-[11px]">
           <span className="text-slate-400 hidden sm:inline">LAYERS:</span>
           <button
             onClick={() => toggleLayer('structural')}

@@ -99,7 +99,7 @@ export const AIAssistantChat: React.FC = () => {
       <button
         onClick={() => setIsOpen((v) => !v)}
         aria-label={isOpen ? 'Close AI assistant' : 'Open AI assistant'}
-        className="fixed bottom-6 right-6 z-50 group flex items-center space-x-2 bg-[#001f3f] hover:bg-[#002b49] text-white border border-slate-700 pl-4 pr-4 py-3.5 shadow-2xl transition-all hover:shadow-sky-900/30 hover:scale-[1.02] cursor-pointer"
+        className="fixed bottom-[calc(env(safe-area-inset-bottom)_+_24px)] right-4 sm:right-6 z-50 group flex items-center space-x-2 bg-[#001f3f] hover:bg-[#002b49] text-white border border-slate-700 pl-4 pr-4 py-3.5 shadow-2xl transition-all hover:shadow-sky-900/30 hover:scale-[1.02] cursor-pointer"
       >
         {isOpen ? (
           <X className="w-5 h-5 text-sky-300" />
@@ -113,7 +113,7 @@ export const AIAssistantChat: React.FC = () => {
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[calc(100vw-3rem)] max-w-sm h-[520px] max-h-[calc(100vh-8rem)] flex flex-col bg-[#000814] border border-sky-900/60 shadow-2xl overflow-hidden bg-blueprint-dark">
+        <div className="fixed bottom-[calc(env(safe-area-inset-bottom)_+_6rem)] right-3 sm:right-6 z-50 w-[calc(100vw_-_1.5rem)] sm:w-[calc(100vw_-_3rem)] max-w-sm h-[520px] max-h-[calc(100dvh_-_6rem)] flex flex-col bg-[#000814] border border-sky-900/60 shadow-2xl overflow-hidden bg-blueprint-dark">
           {/* Header */}
           <div className="px-4 py-3 bg-[#00122b] border-b border-sky-900/50 flex items-center justify-between">
             <div className="flex items-center space-x-3">

@@ -24,7 +24,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       <div className="bg-[#F4F2ED] border-2 border-slate-700 max-w-5xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden font-sans text-slate-900">
         
         {/* Title Block Header */}
-        <div className="bg-[#001733] text-white px-5 py-3 border-b-2 border-slate-700 flex items-center justify-between shrink-0 font-mono text-xs">
+        <div className="bg-[#001733] text-white px-4 sm:px-5 py-3 border-b-2 border-slate-700 flex flex-wrap items-center justify-between gap-y-2 shrink-0 font-mono text-xs">
           <div className="flex items-center space-x-3">
             <span className="px-2 py-0.5 bg-sky-500 text-black font-bold">
               {project.refCode}
@@ -35,10 +35,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           </div>
 
           {/* Navigation Tabs inside header */}
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-0.5 sm:space-x-1">
             <button
               onClick={() => setActiveTab('overview')}
-              className={`px-3 py-1 text-xs font-mono transition-colors ${
+              className={`px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs font-mono transition-colors whitespace-nowrap ${
                 activeTab === 'overview'
                   ? 'bg-white text-slate-900 font-bold'
                   : 'text-slate-300 hover:text-white'
@@ -48,7 +48,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('blueprint')}
-              className={`px-3 py-1 text-xs font-mono transition-colors ${
+              className={`px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs font-mono transition-colors whitespace-nowrap ${
                 activeTab === 'blueprint'
                   ? 'bg-sky-500 text-black font-bold'
                   : 'text-slate-300 hover:text-white'
@@ -58,7 +58,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('specs')}
-              className={`px-3 py-1 text-xs font-mono transition-colors ${
+              className={`px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs font-mono transition-colors whitespace-nowrap ${
                 activeTab === 'specs'
                   ? 'bg-white text-slate-900 font-bold'
                   : 'text-slate-300 hover:text-white'
@@ -68,7 +68,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </button>
             <button
               onClick={onClose}
-              className="p-1 text-slate-400 hover:text-white ml-3"
+              className="p-1 text-slate-400 hover:text-white ml-2 sm:ml-3"
               aria-label="Close Project Dossier"
             >
               <X className="w-5 h-5" />

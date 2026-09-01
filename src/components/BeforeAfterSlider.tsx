@@ -149,7 +149,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           <span>DRAG HANDLE OR JUMP TO VIEW:</span>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => setSliderPosition(0)}
             className={`px-2.5 py-1 text-[11px] font-mono border transition-colors ${

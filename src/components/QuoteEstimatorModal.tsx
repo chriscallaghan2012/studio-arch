@@ -104,10 +104,10 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
-      <div className="bg-[#F4F2ED] border-2 border-slate-700 max-w-4xl w-full shadow-2xl overflow-hidden text-slate-900 font-sans relative">
+      <div className="bg-[#F4F2ED] border-2 border-slate-700 max-w-4xl w-full shadow-2xl overflow-hidden text-slate-900 font-sans relative flex flex-col max-h-[92dvh]">
         
         {/* Engineering Title Block Header */}
-        <div className="bg-[#001733] text-white px-5 py-4 border-b border-slate-700 flex items-center justify-between">
+        <div className="bg-[#001733] text-white px-4 sm:px-5 py-4 border-b border-slate-700 flex flex-wrap items-center justify-between gap-y-2 shrink-0">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-sky-500/20 border border-sky-400 text-sky-300 flex items-center justify-center font-mono font-bold text-xs">
               <Calculator className="w-4 h-4" />
@@ -131,7 +131,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 flex-1 overflow-y-auto">
           
           {/* Left Column: Parameter Inputs */}
           <div className="lg:col-span-7 p-6 space-y-6 border-b lg:border-b-0 lg:border-r border-slate-300">
