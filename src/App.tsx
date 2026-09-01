@@ -11,6 +11,7 @@ import { FaqPage } from './pages/FaqPage';
 import { ContactPage } from './pages/ContactPage';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { QuoteEstimatorModal } from './components/QuoteEstimatorModal';
+import { AIAssistantChat } from './components/AIAssistantChat';
 
 export const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageView>('home');
@@ -138,6 +139,9 @@ export const App: React.FC = () => {
         onApplyToEnquiry={handleApplyToEnquiry}
         setCurrentPage={setCurrentPage}
       />
+
+      {/* AI Design Assistant — floating chat widget */}
+      <AIAssistantChat />
 
     </div>
   );
