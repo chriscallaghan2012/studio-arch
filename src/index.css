@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f4f2ed;
+    color: #111827;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom architectural utilities */
+.font-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-serif-title {
+  font-family: 'Cinzel', serif;
+}
+
+.bg-blueprint-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 43, 73, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 43, 73, 0.05) 1px, transparent 1px);
+}
+
+.bg-blueprint-grid-dense {
+  background-size: 12px 12px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 43, 73, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 43, 73, 0.08) 1px, transparent 1px);
+}
+
+.bg-blueprint-dark {
+  background-color: #000814;
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(47, 111, 159, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(47, 111, 159, 0.12) 1px, transparent 1px);
+}
+
+.blueprint-paper-grain {
+  background-color: #F4F2ED;
+}
+
+.technical-border {
+  border-color: #cbd5e1;
+}
+
+/* Custom scrollbar for blueprint feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ebe7df;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

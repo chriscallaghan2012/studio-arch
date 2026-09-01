@@ -1,0 +1,187 @@
+import React, { useState, useRef, useCallback } from 'react';
+import { Sparkles, Compass, MoveHorizontal, ZoomIn } from 'lucide-react';
+
+interface BeforeAfterSliderProps {
+  cadImage: string;
+  realityImage: string;
+  projectTitle: string;
+  projectRef: string;
+  location: string;
+}
+
+export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
+  cadImage,
+  realityImage,
+  projectTitle,
+  projectRef,
+  location
+}) => {
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMove = useCallback((clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPosition(percentage);
+  }, []);
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDragging && e.touches.length > 0) {
+      handleMove(e.touches[0].clientX);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      handleMove(e.clientX);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    handleMove(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  return (
+    <div className="bg-[#000d1a] border border-slate-700 text-white overflow-hidden shadow-xl">
+      {/* Title block header */}
+      <div className="bg-[#001733] px-4 py-2.5 border-b border-slate-700 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+        <div className="flex items-center space-x-3">
+          <span className="bg-sky-500/20 text-sky-300 border border-sky-400/40 px-2 py-0.5 font-bold">
+            INTERACTIVE SLIDER
+          </span>
+          <span className="font-bold text-white tracking-wider">{projectTitle}</span>
+          <span className="text-slate-400">[{projectRef}]</span>
+        </div>
+        <div className="flex items-center space-x-4 text-[11px] text-slate-300">
+          <span className="hidden sm:inline">LOC: {location}</span>
+          <span className="text-slate-500">|</span>
+          <span className="text-sky-400 font-bold">SPLIT: {Math.round(sliderPosition)}% REALITY</span>
+        </div>
+      </div>
+
+      {/* Main Interactive Stage */}
+      <div
+        ref={containerRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={() => setIsDragging(true)}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={() => setIsDragging(false)}
+        className="relative w-full h-[360px] sm:h-[480px] lg:h-[540px] cursor-ew-resize select-none overflow-hidden group"
+      >
+        {/* Layer 1: Left Background - Wireframe CAD Blueprint */}
+        <div className="absolute inset-0 w-full h-full bg-[#001026] flex items-center justify-center">
+          <img
+            src={cadImage}
+            alt="Technical CAD Blueprint Elevation"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover filter contrast-125 brightness-95"
+          />
+          {/* Blueprint Crosshair Overlays */}
+          <div className="absolute inset-0 bg-blueprint-grid-dense opacity-30 pointer-events-none"></div>
+          
+          <div className="absolute top-4 left-4 z-10 bg-[#001428]/90 border border-sky-500/40 px-3 py-1.5 backdrop-blur-xs font-mono text-[11px] text-sky-300">
+            <span className="w-2 h-2 rounded-full bg-sky-400 inline-block mr-1.5"></span>
+            <span>LAYER 01: 2D CAD SCHEMATIC (1:50)</span>
+          </div>
+
+          <div className="absolute bottom-4 left-4 z-10 bg-[#001428]/90 border border-slate-700 px-3 py-1 text-[10px] font-mono text-slate-400 hidden sm:block">
+            GRID: 1000mm // BS 1192 COMPLIANT
+          </div>
+        </div>
+
+        {/* Layer 2: Right Foreground - Photorealistic Built Reality (Clipped) */}
+        <div
+          className="absolute inset-0 h-full overflow-hidden"
+          style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
+        >
+          <img
+            src={realityImage}
+            alt="Completed Built Architecture"
+            referrerPolicy="no-referrer"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          
+          <div className="absolute top-4 right-4 z-10 bg-black/80 border border-emerald-500/50 px-3 py-1.5 backdrop-blur-xs font-mono text-[11px] text-emerald-300">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5 animate-pulse"></span>
+            <span>LAYER 02: EXECUTED STRUCTURE</span>
+          </div>
+
+          <div className="absolute bottom-4 right-4 z-10 bg-black/80 border border-slate-700 px-3 py-1 text-[10px] font-mono text-slate-300 hidden sm:block">
+            STATUS: HANDOVER COMPLETE // CERTIFIED
+          </div>
+        </div>
+
+        {/* Draggable Divider Line & Controller Handle */}
+        <div
+          className="absolute top-0 bottom-0 w-1 bg-sky-400 z-20 shadow-[0_0_12px_rgba(56,189,248,0.8)]"
+          style={{ left: `${sliderPosition}%` }}
+        >
+          {/* Vertical measurement ticks along the divider line */}
+          <div className="absolute top-1/4 -left-1 text-[8px] font-mono text-sky-300 bg-sky-950 px-1 py-0.5 border border-sky-400 -translate-x-full">
+            +3.450m
+          </div>
+          <div className="absolute bottom-1/4 -left-1 text-[8px] font-mono text-sky-300 bg-sky-950 px-1 py-0.5 border border-sky-400 -translate-x-full">
+            ±0.000 FFL
+          </div>
+
+          {/* Central Handle Button */}
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#001f3f] border-2 border-sky-400 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <MoveHorizontal className="w-5 h-5 text-sky-300" />
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Interactive Controls & Preset Snapping */}
+      <div className="bg-[#001428] px-4 py-3 border-t border-slate-700 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+        <div className="flex items-center space-x-2 text-slate-400">
+          <Compass className="w-4 h-4 text-sky-400" />
+          <span>DRAG HANDLE OR JUMP TO VIEW:</span>
+        </div>
+
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={() => setSliderPosition(0)}
+            className={`px-2.5 py-1 text-[11px] font-mono border transition-colors ${
+              sliderPosition === 0
+                ? 'bg-sky-500 text-black border-sky-400 font-bold'
+                : 'bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800'
+            }`}
+          >
+            100% REALITY
+          </button>
+          <button
+            onClick={() => setSliderPosition(50)}
+            className={`px-2.5 py-1 text-[11px] font-mono border transition-colors ${
+              sliderPosition === 50
+                ? 'bg-sky-500 text-black border-sky-400 font-bold'
+                : 'bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800'
+            }`}
+          >
+            50% OVERLAY
+          </button>
+          <button
+            onClick={() => setSliderPosition(100)}
+            className={`px-2.5 py-1 text-[11px] font-mono border transition-colors ${
+              sliderPosition === 100
+                ? 'bg-sky-500 text-black border-sky-400 font-bold'
+                : 'bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800'
+            }`}
+          >
+            100% CAD BLUEPRINT
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};

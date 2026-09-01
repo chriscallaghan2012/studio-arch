@@ -1,0 +1,6 @@
+{
+  "name": "Studio Arch | Architectural Plans & Drafting",
+  "description": "Premier architectural drafting, planning permissions, building regulations, and structural engineering studio engineered with mathematical precision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
