@@ -47,7 +47,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F4F2ED] text-slate-900 selection:bg-[#001f3f] selection:text-sky-300">
+    <div className="min-h-screen flex flex-col bg-ivory text-ink selection:bg-brass selection:text-white">
       
       {/* Sticky Architectural Header */}
       <Navbar

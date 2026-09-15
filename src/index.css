@@ -1,10 +1,26 @@
 @import "tailwindcss";
 
+@theme {
+  /* Studio Arch — luxury architectural palette */
+  --color-ivory: #F5F3EE;
+  --color-paper: #FBFAF6;
+  --color-ink: #0E1622;
+  --color-ink-soft: #1A2433;
+  --color-brass: #A9873C;
+  --color-brass-light: #C8A865;
+  --color-hairline: #E2DCCE;
+  --color-stone: #6F6A60;
+  --color-sage: #5F7A61;
+
+  --font-display: 'Cinzel', ui-serif, Georgia, serif;
+}
+
 @layer base {
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f4f2ed;
-    color: #111827;
+    background-color: #F5F3EE;
+    color: #1A2433;
+    -webkit-font-smoothing: antialiased;
   }
 
   code, pre, .font-mono {
@@ -12,43 +28,60 @@
   }
 }
 
-/* Custom architectural utilities */
+/* Editorial display typography — engraved Roman caps */
 .font-display {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Cinzel', ui-serif, Georgia, serif;
 }
 
 .font-serif-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant Garamond', 'Cinzel', georgia, serif;
 }
 
+/* Refined uppercase eyebrow labels */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-brass);
+}
+
+.eyebrow-dark {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--color-brass-light);
+}
+
+/* Faint architectural paper-grain grid (studio drawing sheet feel) */
 .bg-blueprint-grid {
-  background-size: 24px 24px;
-  background-image: 
-    linear-gradient(to right, rgba(0, 43, 73, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 43, 73, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-image:
+    linear-gradient(to right, rgba(30, 36, 51, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 36, 51, 0.035) 1px, transparent 1px);
 }
 
 .bg-blueprint-grid-dense {
-  background-size: 12px 12px;
-  background-image: 
-    linear-gradient(to right, rgba(0, 43, 73, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 43, 73, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-image:
+    linear-gradient(to right, rgba(200, 168, 101, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 168, 101, 0.06) 1px, transparent 1px);
 }
 
 .bg-blueprint-dark {
-  background-color: #000814;
-  background-size: 28px 28px;
-  background-image: 
-    linear-gradient(to right, rgba(47, 111, 159, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(47, 111, 159, 0.12) 1px, transparent 1px);
+  background-color: #0E1622;
+  background-image:
+    radial-gradient(1100px 480px at 18% -5%, rgba(200, 168, 101, 0.08), transparent 62%),
+    radial-gradient(900px 480px at 100% 110%, rgba(200, 168, 101, 0.05), transparent 60%);
 }
 
 .blueprint-paper-grain {
-  background-color: #F4F2ED;
+  background-color: #F5F3EE;
 }
 
 .technical-border {
-  border-color: #cbd5e1;
+  border-color: #E2DCCE;
 }
 
 /* Mobile & iPad friendliness — prevent iOS Safari auto-zoom on small inputs */

@@ -99,31 +99,31 @@ export const AIAssistantChat: React.FC = () => {
       <button
         onClick={() => setIsOpen((v) => !v)}
         aria-label={isOpen ? 'Close AI assistant' : 'Open AI assistant'}
-        className="fixed bottom-[calc(env(safe-area-inset-bottom)_+_24px)] right-4 sm:right-6 z-50 group flex items-center space-x-2 bg-[#001f3f] hover:bg-[#002b49] text-white border border-slate-700 pl-4 pr-4 py-3.5 shadow-2xl transition-all hover:shadow-sky-900/30 hover:scale-[1.02] cursor-pointer"
+        className="fixed bottom-[calc(env(safe-area-inset-bottom)_+_24px)] right-4 sm:right-6 z-50 group flex items-center space-x-2 bg-ink hover:bg-ink-soft text-white border border-white/10 pl-4 pr-4 py-3.5 shadow-2xl transition-all hover:shadow-black/30 hover:scale-[1.02] cursor-pointer"
       >
         {isOpen ? (
-          <X className="w-5 h-5 text-sky-300" />
+          <X className="w-5 h-5 text-brass-light" />
         ) : (
-          <Bot className="w-5 h-5 text-sky-400" />
+          <Bot className="w-5 h-5 text-brass-light" />
         )}
-        <span className="font-mono text-xs font-bold uppercase tracking-wider hidden sm:inline">
+        <span className="font-sans text-xs font-bold uppercase tracking-wider hidden sm:inline">
           {isOpen ? 'Close' : 'AI Assistant'}
         </span>
       </button>
 
       {/* Chat panel */}
       {isOpen && (
-        <div className="fixed bottom-[calc(env(safe-area-inset-bottom)_+_6rem)] right-3 sm:right-6 z-50 w-[calc(100vw_-_1.5rem)] sm:w-[calc(100vw_-_3rem)] max-w-sm h-[520px] max-h-[calc(100dvh_-_6rem)] flex flex-col bg-[#000814] border border-sky-900/60 shadow-2xl overflow-hidden bg-blueprint-dark">
+        <div className="fixed bottom-[calc(env(safe-area-inset-bottom)_+_6rem)] right-3 sm:right-6 z-50 w-[calc(100vw_-_1.5rem)] sm:w-[calc(100vw_-_3rem)] max-w-sm h-[520px] max-h-[calc(100dvh_-_6rem)] flex flex-col bg-ink border border-brass/40/60 shadow-2xl overflow-hidden bg-blueprint-dark">
           {/* Header */}
-          <div className="px-4 py-3 bg-[#00122b] border-b border-sky-900/50 flex items-center justify-between">
+          <div className="px-4 py-3 bg-ink-soft border-b border-brass/40/50 flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-[#001f3f] border border-sky-800/60 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-sky-400" />
+              <div className="w-8 h-8 bg-ink border border-brass/40/60 flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-brass-light" />
               </div>
               <div>
                 <p className="text-white font-display font-bold text-sm leading-tight">AI DESIGN ASSISTANT</p>
-                <p className="text-[10px] font-mono text-emerald-400 flex items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse" />
+                <p className="text-[10px] font-sans text-brass-light flex items-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brass mr-1.5 animate-pulse" />
                   {isLoading ? 'DRAFTING RESPONSE…' : 'SYSTEM: ONLINE'}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export const AIAssistantChat: React.FC = () => {
             <button
               onClick={() => setIsOpen(false)}
               aria-label="Close"
-              className="text-slate-400 hover:text-white transition-colors cursor-pointer"
+              className="text-stone hover:text-white transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -144,12 +144,12 @@ export const AIAssistantChat: React.FC = () => {
                 <div
                   className={`max-w-[85%] px-3.5 py-2.5 text-[13px] leading-relaxed border ${
                     m.role === 'user'
-                      ? 'bg-[#002b49] border-sky-800/60 text-sky-100'
-                      : 'bg-[#00122b] border-slate-800 text-slate-200'
+                      ? 'bg-ink-soft border-brass/40/60 text-brass-light'
+                      : 'bg-ink-soft border-white/10 text-white/85'
                   }`}
                 >
                   {m.role === 'assistant' && (
-                    <p className="text-[9px] font-mono text-sky-500 tracking-widest mb-1">
+                    <p className="text-[9px] font-sans text-brass-light tracking-widest mb-1">
                       ARCH-DRAFT // REPLY 0{idx + 1}
                     </p>
                   )}
@@ -160,9 +160,9 @@ export const AIAssistantChat: React.FC = () => {
 
             {isLoading && (
               <div className="flex justify-start">
-                <div className="px-3.5 py-2.5 bg-[#00122b] border border-slate-800 text-slate-300 text-[13px] flex items-center space-x-2">
-                  <Loader2 className="w-3.5 h-3.5 text-sky-400 animate-spin" />
-                  <span className="font-mono text-[11px]">CALCULATING…</span>
+                <div className="px-3.5 py-2.5 bg-ink-soft border border-white/10 text-white/70 text-[13px] flex items-center space-x-2">
+                  <Loader2 className="w-3.5 h-3.5 text-brass-light animate-spin" />
+                  <span className="font-sans text-[11px]">CALCULATING…</span>
                 </div>
               </div>
             )}
@@ -175,7 +175,7 @@ export const AIAssistantChat: React.FC = () => {
                   key={q}
                   onClick={() => sendMessage(q)}
                   disabled={isLoading}
-                  className="px-2 py-1 text-[10px] font-mono text-sky-300 bg-sky-950/40 hover:bg-sky-900/50 border border-sky-900/60 transition-colors cursor-pointer disabled:opacity-50"
+                  className="px-2 py-1 text-[10px] font-sans text-brass-light bg-ink/40 hover:bg-brass/20 border border-brass/40/60 transition-colors cursor-pointer disabled:opacity-50"
                 >
                   {q}
                 </button>
@@ -184,7 +184,7 @@ export const AIAssistantChat: React.FC = () => {
           )}
 
           {/* Input */}
-          <div className="p-3 border-t border-sky-900/50 bg-[#00122b]">
+          <div className="p-3 border-t border-brass/40/50 bg-ink-soft">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -197,18 +197,18 @@ export const AIAssistantChat: React.FC = () => {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about plans, regs, costs…"
                 disabled={isLoading}
-                className="flex-1 bg-[#000814] border border-slate-800 focus:border-sky-700 px-3 py-2.5 text-[13px] text-slate-100 placeholder:text-slate-500 outline-none disabled:opacity-60"
+                className="flex-1 bg-ink border border-white/10 focus:border-brass/40 px-3 py-2.5 text-[13px] text-white/90 placeholder:text-stone outline-none disabled:opacity-60"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
                 aria-label="Send message"
-                className="w-10 h-10 bg-sky-500 hover:bg-sky-400 text-black flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                className="w-10 h-10 bg-brass hover:bg-brass text-black flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
               >
                 <Send className="w-4 h-4" />
               </button>
             </form>
-            <div className="mt-2 flex items-center justify-between text-[9px] font-mono text-slate-600">
+            <div className="mt-2 flex items-center justify-between text-[9px] font-sans text-stone">
               <span className="flex items-center">
                 <AlertTriangle className="w-3 h-3 mr-1 text-amber-500/70" />
                 AI-GENERATED GUIDANCE — CONFIRM WITH OUR TECHNICIANS

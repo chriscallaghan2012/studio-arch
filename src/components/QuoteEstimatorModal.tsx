@@ -103,20 +103,20 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
-      <div className="bg-[#F4F2ED] border-2 border-slate-700 max-w-4xl w-full shadow-2xl overflow-hidden text-slate-900 font-sans relative flex flex-col max-h-[92dvh]">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-ink/80 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
+      <div className="bg-ivory border border-white/10 max-w-4xl w-full shadow-2xl overflow-hidden text-ink font-sans relative flex flex-col max-h-[92dvh]">
         
         {/* Engineering Title Block Header */}
-        <div className="bg-[#001733] text-white px-4 sm:px-5 py-4 border-b border-slate-700 flex flex-wrap items-center justify-between gap-y-2 shrink-0">
+        <div className="bg-ink-soft text-white px-4 sm:px-5 py-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-y-2 shrink-0">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-sky-500/20 border border-sky-400 text-sky-300 flex items-center justify-center font-mono font-bold text-xs">
+            <div className="w-8 h-8 bg-brass/20 border border-brass text-brass-light flex items-center justify-center font-sans font-bold text-xs">
               <Calculator className="w-4 h-4" />
             </div>
             <div>
               <h3 className="font-bold text-base tracking-wide font-display">
                 ARCHITECTURAL FEE & SCOPE CALCULATOR
               </h3>
-              <p className="text-[11px] font-mono text-sky-400">
+              <p className="text-[11px] font-sans text-brass-light">
                 DOC_REF: CALC-2024 // INSTANT ACCREDITED ESTIMATION
               </p>
             </div>
@@ -124,7 +124,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 text-stone hover:text-white hover:bg-ink-soft transition-colors"
             aria-label="Close Fee Estimator"
           >
             <X className="w-5 h-5" />
@@ -134,11 +134,11 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 flex-1 overflow-y-auto">
           
           {/* Left Column: Parameter Inputs */}
-          <div className="lg:col-span-7 p-6 space-y-6 border-b lg:border-b-0 lg:border-r border-slate-300">
+          <div className="lg:col-span-7 p-6 space-y-6 border-b lg:border-b-0 lg:border-r border-hairline">
             
             {/* 1. Project Type */}
             <div>
-              <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-sans font-bold text-stone uppercase tracking-wider mb-2">
                 01. PROJECT CLASSIFICATION
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -153,10 +153,10 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                     key={item.id}
                     type="button"
                     onClick={() => setParams({ ...params, projectType: item.id as any })}
-                    className={`p-2.5 text-xs font-mono text-left border transition-all ${
+                    className={`p-2.5 text-xs font-sans text-left border transition-all ${
                       params.projectType === item.id
-                        ? 'bg-[#001f3f] text-white border-[#001f3f] font-bold shadow-xs'
-                        : 'bg-white text-slate-700 border-slate-300 hover:border-slate-400'
+                        ? 'bg-ink text-white border-ink font-bold shadow-xs'
+                        : 'bg-white text-stone border-hairline hover:border-stone'
                     }`}
                   >
                     {item.label}
@@ -168,10 +168,10 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
             {/* 2. Floor Area Slider */}
             <div>
               <div className="flex justify-between items-center mb-2">
-                <label className="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">
+                <label className="text-xs font-sans font-bold text-stone uppercase tracking-wider">
                   02. GROSS INTERNAL FLOOR AREA
                 </label>
-                <span className="px-2.5 py-0.5 bg-[#001f3f] text-white font-mono text-xs font-bold">
+                <span className="px-2.5 py-0.5 bg-ink text-white font-sans text-xs font-bold">
                   {params.floorAreaSqm} m² ({Math.round(params.floorAreaSqm * 10.764)} sq ft)
                 </span>
               </div>
@@ -182,9 +182,9 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                 step={5}
                 value={params.floorAreaSqm}
                 onChange={(e) => setParams({ ...params, floorAreaSqm: Number(e.target.value) })}
-                className="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-[#001f3f]"
+                className="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-brass"
               />
-              <div className="flex justify-between text-[10px] font-mono text-slate-500 mt-1">
+              <div className="flex justify-between text-[10px] font-sans text-stone mt-1">
                 <span>15 m² (Minor)</span>
                 <span>150 m² (Standard)</span>
                 <span>400 m² (Substantial)</span>
@@ -193,7 +193,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
 
             {/* 3. Planning Authority & Zoning */}
             <div>
-              <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-sans font-bold text-stone uppercase tracking-wider mb-2">
                 03. PLANNING ZONE & CONSTRAINTS
               </label>
               <div className="grid grid-cols-2 gap-2">
@@ -207,10 +207,10 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                     key={zone.id}
                     type="button"
                     onClick={() => setParams({ ...params, planningZone: zone.id as any })}
-                    className={`p-2 text-xs font-mono text-left border transition-all ${
+                    className={`p-2 text-xs font-sans text-left border transition-all ${
                       params.planningZone === zone.id
-                        ? 'bg-[#001f3f] text-white border-[#001f3f] font-bold'
-                        : 'bg-white text-slate-700 border-slate-300 hover:border-slate-400'
+                        ? 'bg-ink text-white border-ink font-bold'
+                        : 'bg-white text-stone border-hairline hover:border-stone'
                     }`}
                   >
                     {zone.label}
@@ -220,56 +220,56 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
             </div>
 
             {/* 4. Optional Packages & Add-ons */}
-            <div className="space-y-2.5 pt-2 border-t border-slate-200">
-              <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">
+            <div className="space-y-2.5 pt-2 border-t border-hairline">
+              <label className="block text-xs font-sans font-bold text-stone uppercase tracking-wider">
                 04. INTEGRATED ENGINEERING TIERS
               </label>
               
-              <label className="flex items-center justify-between p-2.5 bg-white border border-slate-300 cursor-pointer hover:bg-slate-50">
+              <label className="flex items-center justify-between p-2.5 bg-white border border-hairline cursor-pointer hover:bg-ivory">
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
                     checked={params.buildingRegsRequired}
                     onChange={(e) => setParams({ ...params, buildingRegsRequired: e.target.checked })}
-                    className="w-4 h-4 text-[#001f3f] rounded focus:ring-0"
+                    className="w-4 h-4 text-brass rounded focus:ring-0"
                   />
                   <div>
-                    <span className="text-xs font-mono font-bold text-slate-800 block">
+                    <span className="text-xs font-sans font-bold text-ink block">
                       Building Regulations Package (Part A–S)
                     </span>
-                    <span className="text-[10px] text-slate-500 font-mono">
+                    <span className="text-[10px] text-stone font-sans">
                       Includes thermal Part L calculation & fire safety means of escape
                     </span>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#002b49]">
+                <span className="text-xs font-sans font-bold text-brass">
                   +£{result.buildingRegsFee}
                 </span>
               </label>
 
-              <label className="flex items-center justify-between p-2.5 bg-white border border-slate-300 cursor-pointer hover:bg-slate-50">
+              <label className="flex items-center justify-between p-2.5 bg-white border border-hairline cursor-pointer hover:bg-ivory">
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
                     checked={params.structuralRequired}
                     onChange={(e) => setParams({ ...params, structuralRequired: e.target.checked })}
-                    className="w-4 h-4 text-[#001f3f] rounded focus:ring-0"
+                    className="w-4 h-4 text-brass rounded focus:ring-0"
                   />
                   <div>
-                    <span className="text-xs font-mono font-bold text-slate-800 block">
+                    <span className="text-xs font-sans font-bold text-ink block">
                       Structural Engineering (IStructE Stamped)
                     </span>
-                    <span className="text-[10px] text-slate-500 font-mono">
+                    <span className="text-[10px] text-stone font-sans">
                       Steel RSJ beam sizing, pad footings & deflection checks
                     </span>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#002b49]">
+                <span className="text-xs font-sans font-bold text-brass">
                   +£{result.structuralEngFee}
                 </span>
               </label>
 
-              <label className="flex items-center justify-between p-2.5 bg-white border border-slate-300 cursor-pointer hover:bg-slate-50">
+              <label className="flex items-center justify-between p-2.5 bg-white border border-hairline cursor-pointer hover:bg-ivory">
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
@@ -280,18 +280,18 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                         timelineSpeed: e.target.checked ? 'expedited' : 'standard'
                       })
                     }
-                    className="w-4 h-4 text-[#001f3f] rounded focus:ring-0"
+                    className="w-4 h-4 text-brass rounded focus:ring-0"
                   />
                   <div>
-                    <span className="text-xs font-mono font-bold text-slate-800 block">
+                    <span className="text-xs font-sans font-bold text-ink block">
                       Priority Fast-Track Dispatch (48hr Survey)
                     </span>
-                    <span className="text-[10px] text-slate-500 font-mono">
+                    <span className="text-[10px] text-stone font-sans">
                       Accelerated CAD drafting turnaround queue
                     </span>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#002b49]">
+                <span className="text-xs font-sans font-bold text-brass">
                   +£{params.timelineSpeed === 'expedited' ? 450 : 0}
                 </span>
               </label>
@@ -300,46 +300,46 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
           </div>
 
           {/* Right Column: Calculated Quotation Breakdown */}
-          <div className="lg:col-span-5 p-6 bg-[#001026] text-white flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-5 p-6 bg-ink-soft text-white flex flex-col justify-between space-y-6">
             
             <div>
-              <div className="border-b border-slate-800 pb-3 mb-4">
-                <span className="text-[10px] font-mono text-sky-400 uppercase tracking-widest block">
+              <div className="border-b border-white/10 pb-3 mb-4">
+                <span className="text-[10px] font-sans text-brass-light uppercase tracking-widest block">
                   SUMMARY BREAKDOWN // METRIC_ESTIMATE
                 </span>
                 <div className="mt-2 flex items-baseline justify-between">
-                  <span className="text-xs text-slate-400 font-mono">TOTAL ESTIMATED FEE:</span>
-                  <span className="text-2xl sm:text-3xl font-bold font-mono text-sky-300">
+                  <span className="text-xs text-stone font-sans">TOTAL ESTIMATED FEE:</span>
+                  <span className="text-2xl sm:text-3xl font-bold font-sans text-brass-light">
                     £{result.totalEstimated.toLocaleString()}
-                    <span className="text-xs text-slate-400 font-normal ml-1">+VAT</span>
+                    <span className="text-xs text-stone font-normal ml-1">+VAT</span>
                   </span>
                 </div>
               </div>
 
               {/* Itemized Lines */}
-              <div className="space-y-2 text-xs font-mono border-b border-slate-800 pb-4">
-                <div className="flex justify-between text-slate-300">
+              <div className="space-y-2 text-xs font-sans border-b border-white/10 pb-4">
+                <div className="flex justify-between text-white/70">
                   <span>Architectural Plans (1:50 / 1:100):</span>
                   <span>£{result.baseDrawingsFee.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-slate-300">
+                <div className="flex justify-between text-white/70">
                   <span>Planning Submission Support:</span>
                   <span>£{result.planningSupportFee.toLocaleString()}</span>
                 </div>
                 {params.buildingRegsRequired && (
-                  <div className="flex justify-between text-slate-300">
+                  <div className="flex justify-between text-white/70">
                     <span>Building Control Full Package:</span>
                     <span>£{result.buildingRegsFee.toLocaleString()}</span>
                   </div>
                 )}
                 {params.structuralRequired && (
-                  <div className="flex justify-between text-slate-300">
+                  <div className="flex justify-between text-white/70">
                     <span>Structural IStructE Calculations:</span>
                     <span>£{result.structuralEngFee.toLocaleString()}</span>
                   </div>
                 )}
                 {params.timelineSpeed === 'expedited' && (
-                  <div className="flex justify-between text-sky-400">
+                  <div className="flex justify-between text-brass-light">
                     <span>Expedited Fast-Track Dispatch:</span>
                     <span>£{result.expeditedFee.toLocaleString()}</span>
                   </div>
@@ -347,27 +347,27 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
               </div>
 
               {/* Deliverable Metrics */}
-              <div className="mt-4 grid grid-cols-2 gap-3 text-xs font-mono">
-                <div className="p-2.5 bg-[#001736] border border-slate-800">
-                  <div className="flex items-center text-slate-400 text-[10px] mb-1">
-                    <Clock className="w-3 h-3 mr-1 text-sky-400" />
+              <div className="mt-4 grid grid-cols-2 gap-3 text-xs font-sans">
+                <div className="p-2.5 bg-ink-soft border border-white/10">
+                  <div className="flex items-center text-stone text-[10px] mb-1">
+                    <Clock className="w-3 h-3 mr-1 text-brass-light" />
                     <span>TIMELINE:</span>
                   </div>
                   <span className="text-white font-bold block">{result.estimatedWeeks}</span>
                 </div>
 
-                <div className="p-2.5 bg-[#001736] border border-slate-800">
-                  <div className="flex items-center text-slate-400 text-[10px] mb-1">
-                    <FileText className="w-3 h-3 mr-1 text-emerald-400" />
+                <div className="p-2.5 bg-ink-soft border border-white/10">
+                  <div className="flex items-center text-stone text-[10px] mb-1">
+                    <FileText className="w-3 h-3 mr-1 text-brass-light" />
                     <span>DRAWING SHEETS:</span>
                   </div>
                   <span className="text-white font-bold block">~{result.deliverablesCount} CAD Sets</span>
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-sky-950/40 border border-sky-800/60 text-[11px] font-mono text-sky-200">
+              <div className="mt-4 p-3 bg-ink/40 border border-brass/40/60 text-[11px] font-sans text-brass-light">
                 <div className="flex items-start space-x-2">
-                  <ShieldCheck className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-brass-light shrink-0 mt-0.5" />
                   <span>
                     Includes 100% Planning Approval Guarantee with free minor revisions if required by council officers.
                   </span>
@@ -380,7 +380,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
               <button
                 type="button"
                 onClick={handleTransferToContact}
-                className="w-full py-3 bg-sky-500 hover:bg-sky-400 text-black font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center space-x-2 shadow-lg transition-colors cursor-pointer"
+                className="w-full py-3 bg-brass hover:bg-brass text-black font-sans text-xs font-bold uppercase tracking-wider flex items-center justify-center space-x-2 shadow-lg transition-colors cursor-pointer"
               >
                 <span>INITIATE PROJECT WITH THIS SCOPE</span>
                 <ArrowRight className="w-4 h-4" />
@@ -389,7 +389,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
               <button
                 type="button"
                 onClick={handleDownloadEstimate}
-                className="w-full py-2 bg-[#001a3d] hover:bg-[#002454] text-slate-300 font-mono text-[11px] border border-slate-700 flex items-center justify-center space-x-1.5 transition-colors"
+                className="w-full py-2 bg-ink-soft hover:bg-[#002454] text-white/70 font-sans text-[11px] border border-white/10 flex items-center justify-center space-x-1.5 transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>

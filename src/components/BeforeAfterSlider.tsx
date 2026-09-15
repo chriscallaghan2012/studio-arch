@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+ import React, { useState, useRef, useCallback } from 'react';
 import { Sparkles, Compass, MoveHorizontal, ZoomIn } from 'lucide-react';
 
 interface BeforeAfterSliderProps {
@@ -50,20 +50,20 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
   };
 
   return (
-    <div className="bg-[#000d1a] border border-slate-700 text-white overflow-hidden shadow-xl">
+    <div className="bg-ink-soft border border-white/10 text-white overflow-hidden shadow-xl">
       {/* Title block header */}
-      <div className="bg-[#001733] px-4 py-2.5 border-b border-slate-700 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+      <div className="bg-ink-soft px-4 py-2.5 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
         <div className="flex items-center space-x-3">
-          <span className="bg-sky-500/20 text-sky-300 border border-sky-400/40 px-2 py-0.5 font-bold">
+          <span className="bg-brass/20 text-brass-light border border-brass/40 px-2 py-0.5 font-bold">
             INTERACTIVE SLIDER
           </span>
           <span className="font-bold text-white tracking-wider">{projectTitle}</span>
-          <span className="text-slate-400">[{projectRef}]</span>
+          <span className="text-stone">[{projectRef}]</span>
         </div>
-        <div className="flex items-center space-x-4 text-[11px] text-slate-300">
+        <div className="flex items-center space-x-4 text-[11px] text-white/70">
           <span className="hidden sm:inline">LOC: {location}</span>
-          <span className="text-slate-500">|</span>
-          <span className="text-sky-400 font-bold">SPLIT: {Math.round(sliderPosition)}% REALITY</span>
+          <span className="text-stone">|</span>
+          <span className="text-brass-light font-bold">SPLIT: {Math.round(sliderPosition)}% REALITY</span>
         </div>
       </div>
 
@@ -80,7 +80,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         className="relative w-full h-[360px] sm:h-[480px] lg:h-[540px] cursor-ew-resize select-none overflow-hidden group"
       >
         {/* Layer 1: Left Background - Wireframe CAD Blueprint */}
-        <div className="absolute inset-0 w-full h-full bg-[#001026] flex items-center justify-center">
+        <div className="absolute inset-0 w-full h-full bg-ink-soft flex items-center justify-center">
           <img
             src={cadImage}
             alt="Technical CAD Blueprint Elevation"
@@ -90,12 +90,12 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           {/* Blueprint Crosshair Overlays */}
           <div className="absolute inset-0 bg-blueprint-grid-dense opacity-30 pointer-events-none"></div>
           
-          <div className="absolute top-4 left-4 z-10 bg-[#001428]/90 border border-sky-500/40 px-3 py-1.5 backdrop-blur-xs font-mono text-[11px] text-sky-300">
-            <span className="w-2 h-2 rounded-full bg-sky-400 inline-block mr-1.5"></span>
+          <div className="absolute top-4 left-4 z-10 bg-ink-soft/90 border border-brass/50/40 px-3 py-1.5 backdrop-blur-xs font-sans text-[11px] text-brass-light">
+            <span className="w-2 h-2 rounded-full bg-brass inline-block mr-1.5"></span>
             <span>LAYER 01: 2D CAD SCHEMATIC (1:50)</span>
           </div>
 
-          <div className="absolute bottom-4 left-4 z-10 bg-[#001428]/90 border border-slate-700 px-3 py-1 text-[10px] font-mono text-slate-400 hidden sm:block">
+          <div className="absolute bottom-4 left-4 z-10 bg-ink-soft/90 border border-white/10 px-3 py-1 text-[10px] font-sans text-stone hidden sm:block">
             GRID: 1000mm // BS 1192 COMPLIANT
           </div>
         </div>
@@ -112,70 +112,70 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             className="absolute inset-0 w-full h-full object-cover"
           />
           
-          <div className="absolute top-4 right-4 z-10 bg-black/80 border border-emerald-500/50 px-3 py-1.5 backdrop-blur-xs font-mono text-[11px] text-emerald-300">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5 animate-pulse"></span>
+          <div className="absolute top-4 right-4 z-10 bg-ink/80 border border-sage/50/50 px-3 py-1.5 backdrop-blur-xs font-sans text-[11px] text-brass-light">
+            <span className="w-2 h-2 rounded-full bg-brass inline-block mr-1.5 animate-pulse"></span>
             <span>LAYER 02: EXECUTED STRUCTURE</span>
           </div>
 
-          <div className="absolute bottom-4 right-4 z-10 bg-black/80 border border-slate-700 px-3 py-1 text-[10px] font-mono text-slate-300 hidden sm:block">
+          <div className="absolute bottom-4 right-4 z-10 bg-ink/80 border border-white/10 px-3 py-1 text-[10px] font-sans text-white/70 hidden sm:block">
             STATUS: HANDOVER COMPLETE // CERTIFIED
           </div>
         </div>
 
         {/* Draggable Divider Line & Controller Handle */}
         <div
-          className="absolute top-0 bottom-0 w-1 bg-sky-400 z-20 shadow-[0_0_12px_rgba(56,189,248,0.8)]"
+          className="absolute top-0 bottom-0 w-1 bg-brass z-20 shadow-[0_0_12px_rgba(56,189,248,0.8)]"
           style={{ left: `${sliderPosition}%` }}
         >
           {/* Vertical measurement ticks along the divider line */}
-          <div className="absolute top-1/4 -left-1 text-[8px] font-mono text-sky-300 bg-sky-950 px-1 py-0.5 border border-sky-400 -translate-x-full">
+          <div className="absolute top-1/4 -left-1 text-[8px] font-sans text-brass-light bg-ink px-1 py-0.5 border border-brass -translate-x-full">
             +3.450m
           </div>
-          <div className="absolute bottom-1/4 -left-1 text-[8px] font-mono text-sky-300 bg-sky-950 px-1 py-0.5 border border-sky-400 -translate-x-full">
+          <div className="absolute bottom-1/4 -left-1 text-[8px] font-sans text-brass-light bg-ink px-1 py-0.5 border border-brass -translate-x-full">
             ±0.000 FFL
           </div>
 
           {/* Central Handle Button */}
-          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#001f3f] border-2 border-sky-400 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-            <MoveHorizontal className="w-5 h-5 text-sky-300" />
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-ink border border-brass text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <MoveHorizontal className="w-5 h-5 text-brass-light" />
           </div>
         </div>
       </div>
 
       {/* Bottom Interactive Controls & Preset Snapping */}
-      <div className="bg-[#001428] px-4 py-3 border-t border-slate-700 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
-        <div className="flex items-center space-x-2 text-slate-400">
-          <Compass className="w-4 h-4 text-sky-400" />
+      <div className="bg-ink-soft px-4 py-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
+        <div className="flex items-center space-x-2 text-stone">
+          <Compass className="w-4 h-4 text-brass-light" />
           <span>DRAG HANDLE OR JUMP TO VIEW:</span>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => setSliderPosition(0)}
-            className={`px-2.5 py-1 text-[11px] font-mono border transition-colors ${
+            className={`px-2.5 py-1 text-[11px] font-sans border transition-colors ${
               sliderPosition === 0
-                ? 'bg-sky-500 text-black border-sky-400 font-bold'
-                : 'bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800'
+                ? 'bg-brass text-black border-brass font-bold'
+                : 'bg-ink text-white/70 border-white/10 hover:bg-ink-soft'
             }`}
           >
             100% REALITY
           </button>
           <button
             onClick={() => setSliderPosition(50)}
-            className={`px-2.5 py-1 text-[11px] font-mono border transition-colors ${
+            className={`px-2.5 py-1 text-[11px] font-sans border transition-colors ${
               sliderPosition === 50
-                ? 'bg-sky-500 text-black border-sky-400 font-bold'
-                : 'bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800'
+                ? 'bg-brass text-black border-brass font-bold'
+                : 'bg-ink text-white/70 border-white/10 hover:bg-ink-soft'
             }`}
           >
             50% OVERLAY
           </button>
           <button
             onClick={() => setSliderPosition(100)}
-            className={`px-2.5 py-1 text-[11px] font-mono border transition-colors ${
+            className={`px-2.5 py-1 text-[11px] font-sans border transition-colors ${
               sliderPosition === 100
-                ? 'bg-sky-500 text-black border-sky-400 font-bold'
-                : 'bg-slate-900 text-slate-300 border-slate-700 hover:bg-slate-800'
+                ? 'bg-brass text-black border-brass font-bold'
+                : 'bg-ink text-white/70 border-white/10 hover:bg-ink-soft'
             }`}
           >
             100% CAD BLUEPRINT

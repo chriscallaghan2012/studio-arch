@@ -59,16 +59,16 @@ export const StructuralSchematicExplorer: React.FC = () => {
   const [selectedNode, setSelectedNode] = useState<NodeData>(STRUCTURAL_NODES[0]);
 
   return (
-    <div className="bg-[#000d1c] border border-slate-700 text-white shadow-xl overflow-hidden font-sans">
+    <div className="bg-ink-soft border border-white/10 text-white shadow-xl overflow-hidden font-sans">
       {/* Top Banner */}
-      <div className="bg-[#001736] px-4 py-3 border-b border-slate-700 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+      <div className="bg-ink-soft px-4 py-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
         <div className="flex items-center space-x-2">
-          <Activity className="w-4 h-4 text-sky-400" />
+          <Activity className="w-4 h-4 text-brass-light" />
           <span className="text-white font-bold">STRUCTURAL SIMULATION ENGINE // EUROCODE 3</span>
         </div>
         <div className="flex items-center space-x-3 text-[11px]">
-          <span className="text-emerald-400 font-mono flex items-center">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+          <span className="text-brass-light font-sans flex items-center">
+            <span className="w-1.5 h-1.5 rounded-full bg-brass mr-1.5 animate-pulse"></span>
             ISTAT_CALCULATOR: ACTIVE
           </span>
         </div>
@@ -77,18 +77,18 @@ export const StructuralSchematicExplorer: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
         
         {/* Left Column: Interactive Vector Diagram Representation */}
-        <div className="lg:col-span-7 p-6 relative bg-[#000814] flex flex-col justify-between overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-800">
+        <div className="lg:col-span-7 p-6 relative bg-ink flex flex-col justify-between overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10">
           <div className="absolute inset-0 bg-blueprint-dark opacity-80 pointer-events-none"></div>
 
           <div className="relative z-10">
-            <div className="flex justify-between items-center text-[11px] font-mono text-slate-400 mb-4">
+            <div className="flex justify-between items-center text-[11px] font-sans text-stone mb-4">
               <span>SCHEMATIC: MOMENT &amp; FORCE DISTRIBUTION</span>
               <span>DATUM: ±0.000 FFL</span>
             </div>
 
             {/* Custom SVG Structural Beam & Load Vector Diagram */}
-            <div className="w-full h-56 relative border border-slate-800 bg-[#001226]/80 p-4 flex items-center justify-center">
-              <svg viewBox="0 0 500 200" className="w-full h-full text-slate-400">
+            <div className="w-full h-56 relative border border-white/10 bg-[#001226]/80 p-4 flex items-center justify-center">
+              <svg viewBox="0 0 500 200" className="w-full h-full text-stone">
                 {/* Grid guidelines */}
                 <line x1="50" y1="140" x2="450" y2="140" stroke="#334155" strokeWidth="1" strokeDasharray="4 4" />
                 <line x1="50" y1="50" x2="450" y2="50" stroke="#334155" strokeWidth="1" strokeDasharray="4 4" />
@@ -177,14 +177,14 @@ export const StructuralSchematicExplorer: React.FC = () => {
               <button
                 key={node.id}
                 onClick={() => setSelectedNode(node)}
-                className={`p-2 text-left text-[11px] font-mono border transition-all ${
+                className={`p-2 text-left text-[11px] font-sans border transition-all ${
                   selectedNode.id === node.id
-                    ? 'bg-sky-900 text-white border-sky-400 font-bold'
-                    : 'bg-[#001020] text-slate-400 border-slate-800 hover:bg-[#001830]'
+                    ? 'bg-brass/20 text-white border-brass font-bold'
+                    : 'bg-ink-soft text-stone border-white/10 hover:bg-[#001830]'
                 }`}
               >
                 <span className="block truncate">{node.id.toUpperCase()}</span>
-                <span className="text-[9px] text-sky-400 block">{node.status}</span>
+                <span className="text-[9px] text-brass-light block">{node.status}</span>
               </button>
             ))}
           </div>
@@ -192,13 +192,13 @@ export const StructuralSchematicExplorer: React.FC = () => {
         </div>
 
         {/* Right Column: Node Engineering Report */}
-        <div className="lg:col-span-5 p-6 bg-[#001229] flex flex-col justify-between space-y-4">
+        <div className="lg:col-span-5 p-6 bg-ink-soft flex flex-col justify-between space-y-4">
           <div>
-            <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
-              <span className="text-[10px] font-mono text-sky-400 uppercase tracking-widest font-bold">
+            <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
+              <span className="text-[10px] font-sans text-brass-light uppercase tracking-widest font-bold">
                 MEMBER ANALYSIS // ISTRUCTE
               </span>
-              <span className="px-2 py-0.5 bg-emerald-950 border border-emerald-700 text-emerald-400 text-[10px] font-mono font-bold">
+              <span className="px-2 py-0.5 bg-brass/15 border border-sage/50 text-brass-light text-[10px] font-sans font-bold">
                 STATUS: {selectedNode.status}
               </span>
             </div>
@@ -207,31 +207,31 @@ export const StructuralSchematicExplorer: React.FC = () => {
               {selectedNode.name}
             </h4>
 
-            <div className="mt-4 space-y-3 font-mono text-xs">
-              <div className="p-3 bg-[#000a17] border border-slate-800">
-                <span className="text-slate-500 text-[10px] block">APPLIED FORMULATION:</span>
-                <span className="text-sky-300 font-bold">{selectedNode.formula}</span>
+            <div className="mt-4 space-y-3 font-sans text-xs">
+              <div className="p-3 bg-[#000a17] border border-white/10">
+                <span className="text-stone text-[10px] block">APPLIED FORMULATION:</span>
+                <span className="text-brass-light font-bold">{selectedNode.formula}</span>
               </div>
 
-              <div className="p-3 bg-[#000a17] border border-slate-800">
-                <span className="text-slate-500 text-[10px] block">CAPACITY THRESHOLD:</span>
-                <span className="text-emerald-400 font-bold">{selectedNode.capacity}</span>
+              <div className="p-3 bg-[#000a17] border border-white/10">
+                <span className="text-stone text-[10px] block">CAPACITY THRESHOLD:</span>
+                <span className="text-brass-light font-bold">{selectedNode.capacity}</span>
               </div>
 
-              <div className="p-3 bg-[#000a17] border border-slate-800">
-                <span className="text-slate-500 text-[10px] block">SAFETY FACTOR MARGIN:</span>
-                <span className="text-slate-200">{selectedNode.safetyFactor}</span>
+              <div className="p-3 bg-[#000a17] border border-white/10">
+                <span className="text-stone text-[10px] block">SAFETY FACTOR MARGIN:</span>
+                <span className="text-white/85">{selectedNode.safetyFactor}</span>
               </div>
 
-              <div className="p-3 bg-[#001c3d] border border-sky-800/70 text-slate-300 text-[11px] leading-relaxed">
+              <div className="p-3 bg-ink-soft border border-brass/40/70 text-white/70 text-[11px] leading-relaxed">
                 {selectedNode.detail}
               </div>
             </div>
           </div>
 
-          <div className="pt-2 text-[10px] font-mono text-slate-500 border-t border-slate-800 flex items-center justify-between">
+          <div className="pt-2 text-[10px] font-sans text-stone border-t border-white/10 flex items-center justify-between">
             <span>ALL PACKAGES INCLUDE FULL CALCULATION TENDER BOOKS</span>
-            <Shield className="w-3.5 h-3.5 text-sky-400" />
+            <Shield className="w-3.5 h-3.5 text-brass-light" />
           </div>
         </div>
 

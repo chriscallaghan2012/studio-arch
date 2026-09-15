@@ -105,56 +105,56 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
   );
 
   return (
-    <div className="bg-[#000e1f] border border-slate-700 text-slate-100 shadow-2xl overflow-hidden font-sans">
+    <div className="bg-ink-soft border border-white/10 text-white/90 shadow-2xl overflow-hidden font-sans">
       {/* Title block banner */}
-      <div className="bg-[#001736] px-4 py-3 border-b border-slate-700 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+      <div className="bg-ink-soft px-4 py-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-4 font-sans text-xs">
         <div className="flex items-center space-x-3">
-          <div className="w-2.5 h-2.5 rounded-xs bg-sky-400"></div>
+          <div className="w-2.5 h-2.5 rounded-xs bg-brass"></div>
           <div>
             <span className="text-white font-bold text-sm tracking-wide">{title}</span>
-            <span className="text-sky-300 ml-2 font-mono text-xs">[{refCode}]</span>
+            <span className="text-brass-light ml-2 font-sans text-xs">[{refCode}]</span>
           </div>
         </div>
 
         {/* Layer Filters */}
         <div className="flex flex-wrap items-center gap-2 text-[11px]">
-          <span className="text-slate-400 hidden sm:inline">LAYERS:</span>
+          <span className="text-stone hidden sm:inline">LAYERS:</span>
           <button
             onClick={() => toggleLayer('structural')}
-            className={`px-2 py-0.5 border text-xs font-mono transition-colors ${
+            className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.structural
-                ? 'bg-sky-900 text-sky-200 border-sky-500'
-                : 'bg-transparent text-slate-500 border-slate-700 line-through'
+                ? 'bg-brass/20 text-brass-light border-brass/50'
+                : 'bg-transparent text-stone border-white/10 line-through'
             }`}
           >
             STRUCTURAL
           </button>
           <button
             onClick={() => toggleLayer('thermal')}
-            className={`px-2 py-0.5 border text-xs font-mono transition-colors ${
+            className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.thermal
-                ? 'bg-emerald-900 text-emerald-200 border-emerald-500'
-                : 'bg-transparent text-slate-500 border-slate-700 line-through'
+                ? 'bg-brass/20 text-brass-light border-sage/50'
+                : 'bg-transparent text-stone border-white/10 line-through'
             }`}
           >
             THERMAL / PART L
           </button>
           <button
             onClick={() => toggleLayer('dimensions')}
-            className={`px-2 py-0.5 border text-xs font-mono transition-colors ${
+            className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.dimensions
                 ? 'bg-amber-900 text-amber-200 border-amber-500'
-                : 'bg-transparent text-slate-500 border-slate-700 line-through'
+                : 'bg-transparent text-stone border-white/10 line-through'
             }`}
           >
             DIMENSIONS
           </button>
           <button
             onClick={() => toggleLayer('mep')}
-            className={`px-2 py-0.5 border text-xs font-mono transition-colors ${
+            className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.mep
                 ? 'bg-purple-900 text-purple-200 border-purple-500'
-                : 'bg-transparent text-slate-500 border-slate-700 line-through'
+                : 'bg-transparent text-stone border-white/10 line-through'
             }`}
           >
             MEP / DRAINAGE
@@ -166,7 +166,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
         
         {/* Main CAD Canvas */}
-        <div className="lg:col-span-2 relative h-[380px] sm:h-[480px] bg-[#000814] overflow-hidden flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-800">
+        <div className="lg:col-span-2 relative h-[380px] sm:h-[480px] bg-ink overflow-hidden flex items-center justify-center border-b lg:border-b-0 lg:border-r border-white/10">
           {/* Blueprint Grid pattern */}
           <div className="absolute inset-0 bg-blueprint-dark opacity-75 pointer-events-none"></div>
 
@@ -185,8 +185,8 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
             {/* Interactive Pins / Hotspots */}
             {filteredAnnotations.map((pin) => {
               const isSelected = selectedNode?.id === pin.id;
-              let pinBg = 'bg-sky-500 border-sky-300';
-              if (pin.category === 'thermal') pinBg = 'bg-emerald-500 border-emerald-300';
+              let pinBg = 'bg-brass border-brass/40';
+              if (pin.category === 'thermal') pinBg = 'bg-brass border-sage/40';
               if (pin.category === 'dimensions') pinBg = 'bg-amber-500 border-amber-300';
               if (pin.category === 'mep') pinBg = 'bg-purple-500 border-purple-300';
 
@@ -195,7 +195,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
                   key={pin.id}
                   onClick={() => setSelectedNode(pin)}
                   style={{ top: `${pin.y}%`, left: `${pin.x}%` }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full border-2 ${pinBg} text-black font-mono text-[10px] font-extrabold flex items-center justify-center shadow-[0_0_12px_rgba(56,189,248,0.7)] transition-all hover:scale-125 cursor-pointer z-20 ${
+                  className={`absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full border ${pinBg} text-black font-sans text-[10px] font-extrabold flex items-center justify-center shadow-none transition-all hover:scale-125 cursor-pointer z-20 ${
                     isSelected ? 'ring-4 ring-white scale-125 animate-bounce' : 'opacity-90'
                   }`}
                   aria-label={`Inspect ${pin.title}`}
@@ -207,49 +207,49 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
           </div>
 
           {/* Bottom Left: Scale Indicator */}
-          <div className="absolute bottom-3 left-3 z-20 bg-[#001026]/90 border border-slate-700 px-3 py-1.5 font-mono text-[11px] text-slate-300 backdrop-blur-xs flex items-center space-x-3">
-            <span className="text-sky-400 font-bold">SCALE: {scale}</span>
-            <span className="text-slate-600">|</span>
+          <div className="absolute bottom-3 left-3 z-20 bg-ink-soft/90 border border-white/10 px-3 py-1.5 font-sans text-[11px] text-white/70 backdrop-blur-xs flex items-center space-x-3">
+            <span className="text-brass-light font-bold">SCALE: {scale}</span>
+            <span className="text-stone">|</span>
             <span>PROJECTION: ORTHOGRAPHIC</span>
           </div>
 
           {/* Bottom Right: Zoom Tools */}
-          <div className="absolute bottom-3 right-3 z-20 bg-[#001026]/90 border border-slate-700 p-1 flex items-center space-x-1 font-mono text-xs backdrop-blur-xs">
+          <div className="absolute bottom-3 right-3 z-20 bg-ink-soft/90 border border-white/10 p-1 flex items-center space-x-1 font-sans text-xs backdrop-blur-xs">
             <button
               onClick={handleZoomIn}
-              className="p-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-1.5 text-white/70 hover:text-white hover:bg-ink-soft transition-colors"
               title="Zoom In"
             >
               <ZoomIn className="w-4 h-4" />
             </button>
             <button
               onClick={handleZoomOut}
-              className="p-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-1.5 text-white/70 hover:text-white hover:bg-ink-soft transition-colors"
               title="Zoom Out"
             >
               <ZoomOut className="w-4 h-4" />
             </button>
             <button
               onClick={handleResetZoom}
-              className="p-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-1.5 text-white/70 hover:text-white hover:bg-ink-soft transition-colors"
               title="Reset View"
             >
               <RotateCcw className="w-4 h-4" />
             </button>
-            <span className="text-[10px] text-sky-400 px-1 font-mono">
+            <span className="text-[10px] text-brass-light px-1 font-sans">
               {Math.round(zoomLevel * 100)}%
             </span>
           </div>
         </div>
 
         {/* Inspector Sidebar for Inspected Node */}
-        <div className="p-5 bg-[#001229] flex flex-col justify-between space-y-4">
+        <div className="p-5 bg-ink-soft flex flex-col justify-between space-y-4">
           <div>
-            <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
-              <span className="text-[11px] font-mono text-sky-400 uppercase tracking-wider font-bold">
+            <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
+              <span className="text-[11px] font-sans text-brass-light uppercase tracking-wider font-bold">
                 NODE_INSPECTOR // CAD_SPEC
               </span>
-              <span className="text-[10px] font-mono text-slate-400">
+              <span className="text-[10px] font-sans text-stone">
                 {filteredAnnotations.length} NODES VISIBLE
               </span>
             </div>
@@ -257,36 +257,36 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
             {selectedNode ? (
               <div className="space-y-3">
                 <div>
-                  <span className="text-[10px] font-mono text-emerald-400 uppercase px-1.5 py-0.5 bg-emerald-950 border border-emerald-800 inline-block mb-1">
+                  <span className="text-[10px] font-sans text-brass-light uppercase px-1.5 py-0.5 bg-brass/15 border border-sage/40 inline-block mb-1">
                     {selectedNode.category.toUpperCase()}
                   </span>
                   <h4 className="text-base font-bold text-white font-display">
                     {selectedNode.title}
                   </h4>
-                  <p className="text-xs font-mono text-sky-300 mt-0.5">
+                  <p className="text-xs font-sans text-brass-light mt-0.5">
                     {selectedNode.code}
                   </p>
                 </div>
 
-                <div className="p-3 bg-[#000a17] border border-slate-800 text-xs font-mono text-slate-300 leading-relaxed">
+                <div className="p-3 bg-[#000a17] border border-white/10 text-xs font-sans text-white/70 leading-relaxed">
                   {selectedNode.description}
                 </div>
 
-                <div className="p-2.5 bg-[#001f3f]/70 border border-sky-800 text-xs font-mono">
-                  <span className="text-slate-400 block text-[10px]">ENGINEERING PARAMETER:</span>
+                <div className="p-2.5 bg-ink/70 border border-brass/40 text-xs font-sans">
+                  <span className="text-stone block text-[10px]">ENGINEERING PARAMETER:</span>
                   <span className="text-white font-bold">{selectedNode.value}</span>
                 </div>
               </div>
             ) : (
-              <div className="p-6 text-center text-slate-500 font-mono text-xs">
+              <div className="p-6 text-center text-stone font-sans text-xs">
                 Click any hotspot pin (+) on the blueprint drawing to inspect structural connections and thermal specifications.
               </div>
             )}
           </div>
 
           {/* Quick Node Selector Pills */}
-          <div className="border-t border-slate-800 pt-3">
-            <span className="text-[10px] font-mono text-slate-400 block mb-2">
+          <div className="border-t border-white/10 pt-3">
+            <span className="text-[10px] font-sans text-stone block mb-2">
               JUMP TO ANNOTATION NODE:
             </span>
             <div className="grid grid-cols-2 gap-1.5">
@@ -294,10 +294,10 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
                 <button
                   key={node.id}
                   onClick={() => setSelectedNode(node)}
-                  className={`text-left p-1.5 text-[10px] font-mono border transition-colors truncate ${
+                  className={`text-left p-1.5 text-[10px] font-sans border transition-colors truncate ${
                     selectedNode?.id === node.id
-                      ? 'bg-sky-900/80 text-white border-sky-400 font-bold'
-                      : 'bg-[#000d1c] text-slate-400 border-slate-800 hover:bg-[#001733]'
+                      ? 'bg-brass/20/80 text-white border-brass font-bold'
+                      : 'bg-ink-soft text-stone border-white/10 hover:bg-ink-soft'
                   }`}
                 >
                   {node.title.split('//')[0]}
