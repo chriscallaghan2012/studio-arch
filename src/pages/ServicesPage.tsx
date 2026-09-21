@@ -4,6 +4,7 @@ import { PRODUCTS } from '../data/catalog';
 import { formatGBP } from '../lib/format';
 import { StructuralSchematicExplorer } from '../components/StructuralSchematicExplorer';
 import { Compass, FileCheck, ShieldCheck, Layers, Check, Calculator, ArrowRight, BookOpen, AlertCircle, ShoppingCart } from 'lucide-react';
+import { SmartImage } from '../components/SmartImage';
 
 interface ServicesPageProps {
   onOpenEstimator: () => void;
@@ -166,7 +167,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   <span>LEAD TIME: {selectedService.leadTime}</span>
                 </div>
                 <div className="relative h-60 w-full overflow-hidden bg-black">
-                  <img
+                  <SmartImage
                     src={selectedService.cadPreviewImage}
                     alt={selectedService.title}
                     referrerPolicy="no-referrer"

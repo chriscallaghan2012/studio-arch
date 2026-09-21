@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Project, ProjectCategory } from '../types';
 import { PROJECTS } from '../data/mockData';
 import { Search, LayoutGrid, Table, ArrowUpRight, Filter, Compass, CheckCircle2 } from 'lucide-react';
+import { SmartImage } from '../components/SmartImage';
 
 interface ProjectsPageProps {
   onSelectProject: (project: Project) => void;
@@ -128,7 +129,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
               <div>
                 {/* Hero / Blueprint toggle preview */}
                 <div className="relative h-64 w-full overflow-hidden bg-ink">
-                  <img
+                  <SmartImage
                     src={proj.heroImage}
                     alt={proj.title}
                     referrerPolicy="no-referrer"

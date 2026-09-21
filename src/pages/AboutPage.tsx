@@ -1,6 +1,7 @@
 import React from 'react';
 import { STATS } from '../data/mockData';
 import { Compass, ShieldCheck, Award, Building2, CheckCircle2, ArrowRight } from 'lucide-react';
+import { SmartImage } from '../components/SmartImage';
 
 interface AboutPageProps {
   onOpenEstimator: () => void;
@@ -30,7 +31,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       {/* Hero Visual & Core Stats */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7 relative h-80 sm:h-96 overflow-hidden border border-white/10 bg-ink">
-          <img
+          <SmartImage
             src="/images/drawing-02.png"
             alt="Masonry Architecture Architectural Annex"
             referrerPolicy="no-referrer"

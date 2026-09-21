@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PROCESS_STAGES } from '../data/mockData';
 import { ProcessStage } from '../types';
 import { ArrowRight, CheckCircle2, Clock, FileText, Check, Compass, Calculator } from 'lucide-react';
+import { SmartImage } from '../components/SmartImage';
 
 interface ProcessPageProps {
   onOpenEstimator: () => void;
@@ -146,7 +147,7 @@ export const ProcessPage: React.FC<ProcessPageProps> = ({
                 <span>METRIC 1:50</span>
               </div>
               <div className="relative h-64 w-full overflow-hidden bg-black">
-                <img
+                <SmartImage
                   src="/images/drawing-01.png"
                   alt="Process Schematic CAD"
                   referrerPolicy="no-referrer"

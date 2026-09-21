@@ -1,5 +1,6 @@
  import React, { useState, useRef, useCallback } from 'react';
 import { Sparkles, Compass, MoveHorizontal, ZoomIn } from 'lucide-react';
+import { SmartImage } from './SmartImage';
 
 interface BeforeAfterSliderProps {
   cadImage: string;
@@ -81,7 +82,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       >
         {/* Layer 1: Left Background - Wireframe CAD Blueprint */}
         <div className="absolute inset-0 w-full h-full bg-ink-soft flex items-center justify-center">
-          <img
+          <SmartImage
             src={cadImage}
             alt="Technical CAD Blueprint Elevation"
             referrerPolicy="no-referrer"
@@ -105,7 +106,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           className="absolute inset-0 h-full overflow-hidden"
           style={{ clipPath: `inset(0 0 0 ${sliderPosition}%)` }}
         >
-          <img
+          <SmartImage
             src={realityImage}
             alt="Completed Built Architecture"
             referrerPolicy="no-referrer"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ZoomIn, ZoomOut, RotateCcw, Eye, Layers, Info, Check, Maximize2 } from 'lucide-react';
+import { SmartImage } from './SmartImage';
 
 interface BlueprintAnnotation {
   id: string;
@@ -175,7 +176,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
             className="relative transition-transform duration-200 ease-out origin-center w-full h-full flex items-center justify-center p-4"
             style={{ transform: `scale(${zoomLevel})` }}
           >
-            <img
+            <SmartImage
               src={blueprintImage}
               alt="Technical CAD Architectural Drawing"
               referrerPolicy="no-referrer"

@@ -18,11 +18,11 @@ export const PROJECTS: Project[] = [
     scale: '1:50',
     status: 'COMPLETED',
     heroImage: '/images/hero-02.jpg',
-    blueprintImage: 'https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0',
+    blueprintImage: '/images/drawing-01.png',
     galleryImages: [
-      'https://lh3.googleusercontent.com/aida/AEtjO1UOCdC4Sf192g-ZXFwfxKsWun0bw8NI0v-FA-kS1IUiG20TH9Awy8Dqet1mUk59tdaqIjDOyKcwOjtP63q2hiU9a0bFn9AovVgto2Be2pOysgPyZEgga1U2NYvRA8XMHuC0KbP4fxj1prYhCjswFjX54WEhX3pEBT0YiPZ4_T6cb3gp2EBt7-gpIrhgRsIrMgUJ-RsayN37Pprl-WTT0Pw3eETMqFCqP9vwKxIeowx57cdlIEYH98Rwfs6g',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDhDio4PkyPpvJhV6_UmqljhwAl5_hYndo4zyLRh06LdxM4IhWaVkYveWV7lUzlNGvQUsMS9kq712zD0QYlZWsXw5wgXu_Se8Cz008zMRZrOugilyNn5h8_rECGyzdyQzScWPWEeun5l9HNyeilO3Ve4cjCbnLl9inMd8etwWdBHkkzZw9lzkY-fqFaSvSZk4YmbiSSsLr4nuff33JCPlLdmy_HRPi0PeIlBfRQFE3rSCL5OqC5drJ4Zw',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA93YIwVPr7Fxl14aPn6joKXwaNNh4pVfkS1Ran9H-zjSD-5z6rNPwSOkqhj6fUsdhFZeTLZg8S9g63_nLlP6tHO8bvaSTqFHeerPOCRZBpVNJ11K3ZiUkTv4WdNRO_zeNDdscQ33sazPpCit3zvYhqtQ1blXi6BQCeIR24fXnFJaNv6wwwvAkYhU5-W40yhzCciNSEsGE3Ffg9B3il-74QtZFb7OGdZKezC-4JcD9KPT5EHacQSbJXIA'
+      '/images/hero-03.jpg',
+      '/images/hero-01.jpg',
+      '/images/studio.jpg'
     ],
     description: 'A minimalist, thermally unbroken glass extension connected to a Grade II listed Victorian terrace. Designed with ultra-slim sightlines and cantilevered structural steel to dissolve boundaries between internal living and the private landscaped courtyard.',
     challenge: 'Strict conservation area restrictions required full structural independence from the 1880s brickwork masonry while maintaining maximum daylight permeability without solar overheating.',
@@ -50,10 +50,10 @@ export const PROJECTS: Project[] = [
     scale: '1:100',
     status: 'COMPLETED',
     heroImage: '/images/hero-01.jpg',
-    blueprintImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAtnkL1jPaOd0DnvVjLsaBBe_4CUnUcKJ8Uub1_p67zCBFXjXXz5norPLS3Qt69kD87zfs7RmwOX9EXHuNiAAQ4EPtW_SxWUtLzTcf7C4Ovl1cakgukDVmISzjEcsdqP-3eS906mbsVsLoqNElSRhcFLGYOXGRP9D8VEH6EE_u-0J5OwkG6kiF_HwIh1fD7pKDTfr0Kuw5GvzyIOot4H7r0avaGJz-fJQ_v9YzpHemB3U4kN8CRpmfwQA',
+    blueprintImage: '/images/drawing-02.png',
     galleryImages: [
-      'https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuArWmOaI21BMrxNexi1D_GlByvVdDsNbvChaE3O3d5irKpMFzp1iGCIwdKt1QKjVb_WLFBWMOeCcMM-0GEmp4skMUyCttYH2E-9wz0k3u0DkT6nUqmJ7ZwVpjfavfkNSnY5diMueXqBh16VoFdAYfu_ehSJKaEWqg2SUF_uTC6cqpLNs0kKjM0JXzKATmguFU4warPUxtIt6JFm7hNE-GhTNCbZx0r36zRq8TlWnz6vDAiFdMGdmt9hMw'
+      '/images/hero-02.jpg',
+      '/images/hero-03.jpg'
     ],
     description: 'High-density five-story mixed commercial office and ground-floor gallery occupying an awkward 4.8-meter-wide post-industrial brownfield gap in East London.',
     challenge: 'Extremely restricted site boundary surrounded on three sides by party wall agreements and tight access for fabrication cranes.',
@@ -81,10 +81,10 @@ export const PROJECTS: Project[] = [
     scale: '1:50',
     status: 'COMPLETED',
     heroImage: '/images/studio.jpg',
-    blueprintImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2Eqc94ZSkJTk08OhWKdMI0VvGS55SjeQSTbiP7Qbuf_R2S74PcAK45PvJT-QUqcxmWUQ3Hz0Xkj0nHjzZXN7osHM9GV1jNgcnYJ3KzX1erXJLrGByhifLwDvPNKbQPrRwZQDlhRpv3Vmr0HbEfk6C3NTNrWqo1Jzq_iYS2Omwx81hDi8tQje5O2lPfMdg7V2icJzgkDUZJbsCNY0xl5r7BpEPxwyt8kZD-e3NB7ZRMW4fOPld70GZJw',
+    blueprintImage: '/images/drawing-01.png',
     galleryImages: [
-      'https://lh3.googleusercontent.com/aida/AEtjO1Vm4CJkv_b4q-h_ywnAxUO5T1EW3-Kipu7LFG6APXrey-nJPVtRa5po_DrekW_WS-WzIjxgyjbSA3HJ7mrtNHNBSdet6ohSbdZ3PWcYhNAzupbBUbaGDd5bEfN3hDQusFLzu5E8TzWlAoVzl-AVzqCiKkTAic9-2ujr3tbkKKZAUvuGy0OoToUcSNKP78AdvAToA-jd-W9N-oqDNPj8FQ92g5eDRMcgZR9vU7We7KBidzbdQS2KfJxO-vU',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAmaXLmC0fxVX9DkyJCzcmC-V_EHPkzFwV33bv0_KluuSJii2CshVbKPUE5bVRDWPGEwCUCD0qMI7CAVncAMP2oFZnIVbbdh99ebW8-ExOEw-gSOU-EQowTILft6UPHRv9AtJanTbzdeRw2JOCXrHiuL66d6HnaSPZGjLzLuP7A_WDLZRMr4OeqZvuK5GloGAgvDghXvgy26Unq514D5HBGnZ5GVf3jbHrbGd1bz6u-8_hi463r9Igqag'
+      '/images/hero-01.jpg',
+      '/images/hero-02.jpg'
     ],
     description: 'A stark contrast of dry-stacked Cotswold oolitic limestone and razor-thin dark zinc cantilevers, creating a dramatic new kitchen wing and art library overlooking undulating meadowlands.',
     challenge: 'Area of Outstanding Natural Beauty (AONB) requiring zero visual glare and strict height limits while executing a contemporary architectural language.',
@@ -111,11 +111,11 @@ export const PROJECTS: Project[] = [
     areaSqm: 450,
     scale: '1:100',
     status: 'COMPLETED',
-    heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIP-x2AyuK0c3M3gc_vte5Un3CaQm7y8DO8K-kgmXYvzx1eFOsnVl85j4GTs_4xzJugK_nLZML58RLOqghl48W6LiBHb_VlufKvl2Ge51Enp-VDpqkPM-H1OEsxEqVpDKcxfOju27EkUfD_c6qRQqSQ55XhvhZZGBh-xaMQtt0FrLl6UIPUK00FkWMGq3QF1S86gZa6oVlnRwRkX8RGcG28Lg9WeFlNZ4n3NEOQIERrg7PMKjfgFD_-g',
-    blueprintImage: 'https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0',
+    heroImage: '/images/hero-03.jpg',
+    blueprintImage: '/images/drawing-02.png',
     galleryImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAIP-x2AyuK0c3M3gc_vte5Un3CaQm7y8DO8K-kgmXYvzx1eFOsnVl85j4GTs_4xzJugK_nLZML58RLOqghl48W6LiBHb_VlufKvl2Ge51Enp-VDpqkPM-H1OEsxEqVpDKcxfOju27EkUfD_c6qRQqSQ55XhvhZZGBh-xaMQtt0FrLl6UIPUK00FkWMGq3QF1S86gZa6oVlnRwRkX8RGcG28Lg9WeFlNZ4n3NEOQIERrg7PMKjfgFD_-g',
-      'https://lh3.googleusercontent.com/aida/AEtjO1UOCdC4Sf192g-ZXFwfxKsWun0bw8NI0v-FA-kS1IUiG20TH9Awy8Dqet1mUk59tdaqIjDOyKcwOjtP63q2hiU9a0bFn9AovVgto2Be2pOysgPyZEgga1U2NYvRA8XMHuC0KbP4fxj1prYhCjswFjX54WEhX3pEBT0YiPZ4_T6cb3gp2EBt7-gpIrhgRsIrMgUJ-RsayN37Pprl-WTT0Pw3eETMqFCqP9vwKxIeowx57cdlIEYH98Rwfs6g'
+      '/images/hero-01.jpg',
+      '/images/hero-02.jpg'
     ],
     description: 'A 3-level subterranean and above-ground sculptural residence rendered in board-marked architectural concrete and charred Japanese cedar (Shou Sugi Ban).',
     challenge: 'Steep sloping topography with high water table and protected mature oak tree root protection zones.',
@@ -150,7 +150,7 @@ export const SERVICES: Service[] = [
       'Full Vector PDF, DWG, and IFC BIM exports'
     ],
     regulationsCovered: ['BS 1192 / ISO 19650', 'RIBA Plan of Work Stage 3/4', 'Standard Metric Dimensioning'],
-    cadPreviewImage: 'https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0',
+    cadPreviewImage: '/images/drawing-01.png',
     leadTime: '10 - 15 Working Days',
     scaleStandard: '1:50 @ A1 // 1:100 @ A2'
   },
@@ -170,7 +170,7 @@ export const SERVICES: Service[] = [
       'Council Liaison, Officer Negotiation & Condition Discharge'
     ],
     regulationsCovered: ['Town and Country Planning Act 1990', 'National Planning Policy Framework (NPPF)', 'Local Area Planning Policies'],
-    cadPreviewImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhDio4PkyPpvJhV6_UmqljhwAl5_hYndo4zyLRh06LdxM4IhWaVkYveWV7lUzlNGvQUsMS9kq712zD0QYlZWsXw5wgXu_Se8Cz008zMRZrOugilyNn5h8_rECGyzdyQzScWPWEeun5l9HNyeilO3Ve4cjCbnLl9inMd8etwWdBHkkzZw9lzkY-fqFaSvSZk4YmbiSSsLr4nuff33JCPlLdmy_HRPi0PeIlBfRQFE3rSCL5OqC5drJ4Zw',
+    cadPreviewImage: '/images/drawing-02.png',
     leadTime: '8 Weeks (Council Statutory Window)',
     scaleStandard: '1:500 / 1:1250 Ordnance Datum'
   },
@@ -191,7 +191,7 @@ export const SERVICES: Service[] = [
       'Part P (Electrical Safety) & Part S (EV Infrastructure)'
     ],
     regulationsCovered: ['Building Regulations 2010 (UK)', 'Approved Documents Parts A–S', 'LABC & NHBC Standards'],
-    cadPreviewImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2Eqc94ZSkJTk08OhWKdMI0VvGS55SjeQSTbiP7Qbuf_R2S74PcAK45PvJT-QUqcxmWUQ3Hz0Xkj0nHjzZXN7osHM9GV1jNgcnYJ3KzX1erXJLrGByhifLwDvPNKbQPrRwZQDlhRpv3Vmr0HbEfk6C3NTNrWqo1Jzq_iYS2Omwx81hDi8tQje5O2lPfMdg7V2icJzgkDUZJbsCNY0xl5r7BpEPxwyt8kZD-e3NB7ZRMW4fOPld70GZJw',
+    cadPreviewImage: '/images/studio.jpg',
     leadTime: '15 - 20 Working Days',
     scaleStandard: '1:20 / 1:10 Construction Assemblies'
   },
@@ -212,7 +212,7 @@ export const SERVICES: Service[] = [
       'Chartered Engineer Stamped Sign-Off Document'
     ],
     regulationsCovered: ['Eurocode 3 (BS EN 1993 Steel)', 'Eurocode 2 (BS EN 1992 Concrete)', 'Eurocode 5 (BS EN 1995 Timber)'],
-    cadPreviewImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAtnkL1jPaOd0DnvVjLsaBBe_4CUnUcKJ8Uub1_p67zCBFXjXXz5norPLS3Qt69kD87zfs7RmwOX9EXHuNiAAQ4EPtW_SxWUtLzTcf7C4Ovl1cakgukDVmISzjEcsdqP-3eS906mbsVsLoqNElSRhcFLGYOXGRP9D8VEH6EE_u-0J5OwkG6kiF_HwIh1fD7pKDTfr0Kuw5GvzyIOot4H7r0avaGJz-fJQ_v9YzpHemB3U4kN8CRpmfwQA',
+    cadPreviewImage: '/images/drawing-02.png',
     leadTime: '7 - 12 Working Days',
     scaleStandard: '1:20 Connection Nodes'
   }

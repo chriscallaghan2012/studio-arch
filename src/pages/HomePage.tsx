@@ -5,6 +5,7 @@ import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
 import { StructuralSchematicExplorer } from '../components/StructuralSchematicExplorer';
 import { TitleBlockEnquiryForm } from '../components/TitleBlockEnquiryForm';
 import { Compass, Calculator, ArrowRight, ArrowUpRight, CheckCircle2, FileText, Layers, ShieldCheck, ChevronDown, Sparkles, Building2, Ruler } from 'lucide-react';
+import { SmartImage } from '../components/SmartImage';
 
 interface HomePageProps {
   setCurrentPage: (page: PageView) => void;
@@ -100,7 +101,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="lg:col-span-5 relative">
               <div className="bg-white border border-hairline p-2 shadow-2xl relative overflow-hidden group">
                 <div className="relative h-80 sm:h-96 w-full overflow-hidden bg-ivory">
-                  <img
+                  <SmartImage
                     src="/images/hero-03.jpg"
                     alt="The Glass Pavilion — residential extension"
                     className="w-full h-full object-cover saturate-[0.98] group-hover:scale-105 transition-transform duration-700"
@@ -306,7 +307,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div>
                 {/* Image */}
                 <div className="relative h-60 w-full overflow-hidden bg-ink">
-                  <img
+                  <SmartImage
                     src={proj.heroImage}
                     alt={proj.title}
                     referrerPolicy="no-referrer"

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Project } from '../types';
 import { X, Check, FileCheck, Layers, Compass, Maximize2, Download, ArrowRight, ExternalLink } from 'lucide-react';
+import { SmartImage } from './SmartImage';
 import { InteractiveBlueprintViewer } from './InteractiveBlueprintViewer';
 
 interface ProjectDetailModalProps {
@@ -84,7 +85,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             <div className="space-y-6">
               {/* Hero Image / Banner */}
               <div className="relative h-64 sm:h-96 w-full overflow-hidden border border-hairline bg-ink group">
-                <img
+                <SmartImage
                   src={project.heroImage}
                   alt={project.title}
                   referrerPolicy="no-referrer"
