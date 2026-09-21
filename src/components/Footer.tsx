@@ -37,8 +37,8 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage, onOpenEstimator 
       <div className="border-b border-white/10 bg-ink-soft px-4 py-2.5 text-xs font-sans relative z-10">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center space-x-4">
-            <span className="text-brass-light tracking-[0.25em] font-medium">
-              STUDIO&nbsp;ARCH
+            <span className="text-brass-light tracking-[0.2em] font-medium">
+              MASONRY&nbsp;ARCHITECTURE
             </span>
             <span className="text-white/40">|</span>
             <span>Chartered Architectural Practice · London &amp; the United Kingdom</span>
@@ -62,8 +62,8 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage, onOpenEstimator 
           {/* Col 1: Brand */}
           <div className="lg:col-span-4 space-y-5">
             <div>
-              <span className="font-display text-2xl tracking-[0.14em] text-white">
-                STUDIO&nbsp;ARCH
+              <span className="font-display text-xl lg:text-2xl tracking-[0.08em] text-white">
+                MASONRY&nbsp;ARCHITECTURE
               </span>
               <p className="text-[11px] font-sans uppercase tracking-[0.3em] text-brass-light mt-1">
                 Chartered Architectural Practice
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage, onOpenEstimator 
               </li>
               <li className="flex items-start space-x-3">
                 <Mail className="w-4 h-4 text-brass-light shrink-0 mt-0.5" />
-                <span>plans@studioarch.co.uk</span>
+                <span>plans@masonryarchitecture.com</span>
               </li>
             </ul>
             <div className="pt-4 text-[11px] leading-relaxed text-white/40 space-y-1 border-t border-white/10">
@@ -156,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentPage, onOpenEstimator 
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-white/40">
-          <span>© {new Date().getFullYear()} Studio Arch Ltd. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Masonry Architecture Ltd. All rights reserved.</span>
           <span className="text-white/40">ARB Registered Practice · No. 084920</span>
           <span className="text-brass-light/70 tracking-[0.2em]">LONDON · EST. 2014</span>
         </div>

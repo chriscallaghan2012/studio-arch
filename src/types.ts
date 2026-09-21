@@ -1,4 +1,4 @@
-export type PageView = 'home' | 'projects' | 'services' | 'process' | 'about' | 'faqs' | 'contact';
+export type PageView = 'home' | 'projects' | 'services' | 'process' | 'about' | 'faqs' | 'contact' | 'checkout';
 
 export type ProjectCategory = 'all' | 'residential' | 'commercial' | 'heritage' | 'new-builds';
 

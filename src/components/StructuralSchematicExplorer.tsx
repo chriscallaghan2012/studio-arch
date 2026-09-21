@@ -64,12 +64,12 @@ export const StructuralSchematicExplorer: React.FC = () => {
       <div className="bg-ink-soft px-4 py-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
         <div className="flex items-center space-x-2">
           <Activity className="w-4 h-4 text-brass-light" />
-          <span className="text-white font-bold">STRUCTURAL SIMULATION ENGINE // EUROCODE 3</span>
+          <span className="text-white font-bold">STRUCTURAL CALCULATIONS · EUROCODE 3</span>
         </div>
         <div className="flex items-center space-x-3 text-[11px]">
           <span className="text-brass-light font-sans flex items-center">
             <span className="w-1.5 h-1.5 rounded-full bg-brass mr-1.5 animate-pulse"></span>
-            ISTAT_CALCULATOR: ACTIVE
+            CALCULATIONS: COMPLETE
           </span>
         </div>
       </div>
@@ -81,14 +81,14 @@ export const StructuralSchematicExplorer: React.FC = () => {
           <div className="absolute inset-0 bg-blueprint-dark opacity-80 pointer-events-none"></div>
 
           <div className="relative z-10">
-            <div className="flex justify-between items-center text-[11px] font-sans text-stone mb-4">
+            <div className="flex justify-between items-center text-[11px] font-sans text-white/60 mb-4">
               <span>SCHEMATIC: MOMENT &amp; FORCE DISTRIBUTION</span>
               <span>DATUM: ±0.000 FFL</span>
             </div>
 
             {/* Custom SVG Structural Beam & Load Vector Diagram */}
             <div className="w-full h-56 relative border border-white/10 bg-[#001226]/80 p-4 flex items-center justify-center">
-              <svg viewBox="0 0 500 200" className="w-full h-full text-stone">
+              <svg viewBox="0 0 500 200" className="w-full h-full text-white/60">
                 {/* Grid guidelines */}
                 <line x1="50" y1="140" x2="450" y2="140" stroke="#334155" strokeWidth="1" strokeDasharray="4 4" />
                 <line x1="50" y1="50" x2="450" y2="50" stroke="#334155" strokeWidth="1" strokeDasharray="4 4" />
@@ -180,7 +180,7 @@ export const StructuralSchematicExplorer: React.FC = () => {
                 className={`p-2 text-left text-[11px] font-sans border transition-all ${
                   selectedNode.id === node.id
                     ? 'bg-brass/20 text-white border-brass font-bold'
-                    : 'bg-ink-soft text-stone border-white/10 hover:bg-[#001830]'
+                    : 'bg-ink-soft text-white/60 border-white/10 hover:bg-[#001830]'
                 }`}
               >
                 <span className="block truncate">{node.id.toUpperCase()}</span>
@@ -196,7 +196,7 @@ export const StructuralSchematicExplorer: React.FC = () => {
           <div>
             <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
               <span className="text-[10px] font-sans text-brass-light uppercase tracking-widest font-bold">
-                MEMBER ANALYSIS // ISTRUCTE
+                MEMBER ANALYSIS · ISTRUCTE
               </span>
               <span className="px-2 py-0.5 bg-brass/15 border border-sage/50 text-brass-light text-[10px] font-sans font-bold">
                 STATUS: {selectedNode.status}
@@ -209,28 +209,28 @@ export const StructuralSchematicExplorer: React.FC = () => {
 
             <div className="mt-4 space-y-3 font-sans text-xs">
               <div className="p-3 bg-[#000a17] border border-white/10">
-                <span className="text-stone text-[10px] block">APPLIED FORMULATION:</span>
+                <span className="text-white/60 text-[10px] block">FORMULA:</span>
                 <span className="text-brass-light font-bold">{selectedNode.formula}</span>
               </div>
 
               <div className="p-3 bg-[#000a17] border border-white/10">
-                <span className="text-stone text-[10px] block">CAPACITY THRESHOLD:</span>
+                <span className="text-white/60 text-[10px] block">CAPACITY:</span>
                 <span className="text-brass-light font-bold">{selectedNode.capacity}</span>
               </div>
 
               <div className="p-3 bg-[#000a17] border border-white/10">
-                <span className="text-stone text-[10px] block">SAFETY FACTOR MARGIN:</span>
+                <span className="text-white/60 text-[10px] block">SAFETY FACTOR:</span>
                 <span className="text-white/85">{selectedNode.safetyFactor}</span>
               </div>
 
-              <div className="p-3 bg-ink-soft border border-brass/40/70 text-white/70 text-[11px] leading-relaxed">
+              <div className="p-3 bg-ink-soft border border-brass/40 text-white/70 text-[11px] leading-relaxed">
                 {selectedNode.detail}
               </div>
             </div>
           </div>
 
-          <div className="pt-2 text-[10px] font-sans text-stone border-t border-white/10 flex items-center justify-between">
-            <span>ALL PACKAGES INCLUDE FULL CALCULATION TENDER BOOKS</span>
+          <div className="pt-2 text-[10px] font-sans text-white/60 border-t border-white/10 flex items-center justify-between">
+            <span>EVERY PACKAGE INCLUDES FULL CALCULATION SETS</span>
             <Shield className="w-3.5 h-3.5 text-brass-light" />
           </div>
         </div>

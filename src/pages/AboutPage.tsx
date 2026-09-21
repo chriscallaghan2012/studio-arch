@@ -23,7 +23,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           Architectural Rigor Meets Editorial Elegance
         </h1>
         <p className="text-base text-stone font-sans mt-3 max-w-3xl leading-relaxed">
-          Founded in 2014, Studio Arch was established to eliminate the friction between architectural imagination and statutory construction reality. We engineer working drawing packages that builders trust and planning officers approve.
+          Founded in 2014, Masonry Architecture was established to eliminate the friction between architectural imagination and statutory construction reality. We engineer working drawing packages that builders trust and planning officers approve.
         </p>
       </div>
 
@@ -31,8 +31,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7 relative h-80 sm:h-96 overflow-hidden border border-white/10 bg-ink">
           <img
-            src="https://lh3.googleusercontent.com/aida/AEtjO1Vm4CJkv_b4q-h_ywnAxUO5T1EW3-Kipu7LFG6APXrey-nJPVtRa5po_DrekW_WS-WzIjxgyjbSA3HJ7mrtNHNBSdet6ohSbdZ3PWcYhNAzupbBUbaGDd5bEfN3hDQusFLzu5E8TzWlAoVzl-AVzqCiKkTAic9-2ujr3tbkKKZAUvuGy0OoToUcSNKP78AdvAToA-jd-W9N-oqDNPj8FQ92g5eDRMcgZR9vU7We7KBidzbdQS2KfJxO-vU"
-            alt="Studio Arch Architectural Annex"
+            src="/images/drawing-02.png"
+            alt="Masonry Architecture Architectural Annex"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
           />

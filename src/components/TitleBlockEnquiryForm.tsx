@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Upload, CheckCircle2, FileText, Send, Clock, ShieldCheck, AlertCircle, Sparkles } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
 interface TitleBlockEnquiryFormProps {
   initialBrief?: string;
@@ -45,13 +44,8 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
 
     setTimeout(() => {
       setIsSubmitting(false);
-      const generatedRef = `SA-ENQ-${Math.floor(1000 + Math.random() * 9000)}`;
+      const generatedRef = `MA-${Math.floor(1000 + Math.random() * 9000)}`;
       setSubmittedRef(generatedRef);
-      confetti({
-        particleCount: 60,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
       if (onSuccess) onSuccess();
     }, 1200);
   };
@@ -62,16 +56,16 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
       <div className="bg-ink-soft text-white px-5 py-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
         <div className="flex items-center space-x-3">
           <span className="bg-brass text-black px-2 py-0.5 font-bold">
-            DOC_REF: ENQ-001 // INITIATE
+            ENQUIRY — 001
           </span>
           <span className="text-white/70 font-bold tracking-wider">
-            PROJECT ENQUIRY & DRAFTING INTAKE
+            PROJECT ENQUIRY
           </span>
         </div>
         <div className="flex items-center space-x-4 text-[11px] text-stone">
-          <span className="text-brass-light font-sans">DISPATCH: ACTIVE_QUEUE</span>
+          <span className="text-brass-light font-sans">REVIEWED BY A DIRECTOR</span>
           <span className="text-stone">|</span>
-          <span>RESPONSE SLA: &lt; 4 HOURS</span>
+          <span>RESPONSE WITHIN 4 HOURS</span>
         </div>
       </div>
 
@@ -83,28 +77,28 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
           
           <div className="space-y-2 max-w-md mx-auto">
             <span className="text-xs font-sans text-stone uppercase tracking-widest">
-              ENQUIRY_DISPATCH_CONFIRMED
+              ENQUIRY RECEIVED
             </span>
             <h3 className="text-2xl font-bold text-ink font-display">
-              Project Brief Registered
+              Thank You
             </h3>
             <p className="text-sm text-stone font-sans">
-              Your architectural drafting brief has been allocated to a Lead Chartered Architect.
+              Your enquiry has been received and will be reviewed personally by a director.
             </p>
           </div>
 
           <div className="p-4 bg-hairline/60 border border-hairline font-sans text-xs max-w-sm mx-auto text-left space-y-2">
             <div className="flex justify-between">
-              <span className="text-stone">ASSIGNED REF:</span>
+              <span className="text-stone">YOUR REFERENCE:</span>
               <span className="font-bold text-brass">{submittedRef}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-stone">SURVEY LEAD:</span>
-              <span className="font-bold text-ink">London Central Studio</span>
+              <span className="text-stone">STUDIO:</span>
+              <span className="font-bold text-ink">The Mayfair Studio</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-stone">TARGET TIMELINE:</span>
-              <span className="font-bold text-ink">Review within 4 hrs</span>
+              <span className="text-stone">NEXT STEPS:</span>
+              <span className="font-bold text-ink">We will be in touch within four working hours</span>
             </div>
           </div>
 
@@ -118,7 +112,7 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
             }}
             className="px-6 py-2.5 bg-ink text-white font-sans text-xs font-bold hover:bg-ink-soft transition-colors"
           >
-            SUBMIT ANOTHER PROJECT INQUIRY
+            SUBMIT ANOTHER PROJECT ENQUIRY
           </button>
         </div>
       ) : (
@@ -128,7 +122,7 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
           <div>
             <div className="border-b border-hairline pb-2 mb-4 flex items-center justify-between">
               <h4 className="text-xs font-sans font-bold text-ink uppercase tracking-wider flex items-center space-x-2">
-                <span className="text-brass">[01]</span>
+                <span className="text-brass">01.</span>
                 <span>CLIENT & CONTACT INFORMATION</span>
               </h4>
               <span className="text-[10px] font-sans text-stone">* REQUIRED FIELDS</span>
@@ -182,7 +176,7 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
           <div>
             <div className="border-b border-hairline pb-2 mb-4">
               <h4 className="text-xs font-sans font-bold text-ink uppercase tracking-wider flex items-center space-x-2">
-                <span className="text-brass">[02]</span>
+                <span className="text-brass">02.</span>
                 <span>SITE LOCATION & PARAMETERS</span>
               </h4>
             </div>
@@ -274,7 +268,7 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
           <div>
             <div className="border-b border-hairline pb-2 mb-3">
               <h4 className="text-xs font-sans font-bold text-ink uppercase tracking-wider flex items-center space-x-2">
-                <span className="text-brass">[03]</span>
+                <span className="text-brass">03.</span>
                 <span>REQUIRED TECHNICAL DISCIPLINES</span>
               </h4>
             </div>
@@ -309,7 +303,7 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
           <div>
             <div className="border-b border-hairline pb-2 mb-3">
               <h4 className="text-xs font-sans font-bold text-ink uppercase tracking-wider flex items-center space-x-2">
-                <span className="text-brass">[04]</span>
+                <span className="text-brass">04.</span>
                 <span>PROJECT BRIEF & EXISTING DRAWINGS</span>
               </h4>
             </div>
@@ -336,10 +330,10 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
                 <div className="flex flex-col items-center justify-center space-y-1">
                   <Upload className="w-5 h-5 text-stone" />
                   <span className="text-xs font-sans font-bold text-ink">
-                    CLICK TO UPLOAD OR DRAG & DROP
+                    CHOOSE FILES TO ATTACH
                   </span>
                   <span className="text-[10px] font-sans text-stone">
-                    Existing Sketches, Estate Agent Plans, Site Photos (PDF, DWG, JPG up to 50MB)
+                    Sketches, drawings &amp; site photos (PDF, DWG, JPG — up to 50 MB)
                   </span>
                 </div>
               </div>
@@ -347,7 +341,7 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
               {uploadedFiles.length > 0 && (
                 <div className="space-y-1 pt-1">
                   <span className="text-[10px] font-sans text-stone uppercase">
-                    ATTACHED FILES ({uploadedFiles.length}):
+                    ATTACHED FILES ({uploadedFiles.length})
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {uploadedFiles.map((fn, idx) => (
@@ -369,7 +363,7 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
           <div className="pt-4 border-t border-hairline flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center space-x-2 text-[11px] font-sans text-stone">
               <ShieldCheck className="w-4 h-4 text-sage" />
-              <span>Strict Privacy: NDA Protected &amp; Direct Chartered Architect Review</span>
+              <span>Your details are held in strict confidence.</span>
             </div>
 
             <button
@@ -380,11 +374,11 @@ export const TitleBlockEnquiryForm: React.FC<TitleBlockEnquiryFormProps> = ({
               {isSubmitting ? (
                 <>
                   <span className="w-4 h-4 border border-white border-t-transparent rounded-full animate-spin"></span>
-                  <span>TRANSMITTING BRIEF...</span>
+                  <span>SENDING YOUR ENQUIRY…</span>
                 </>
               ) : (
                 <>
-                  <span>DISPATCH PROJECT BRIEF</span>
+                  <span>SEND ENQUIRY</span>
                   <Send className="w-3.5 h-3.5" />
                 </>
               )}

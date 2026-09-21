@@ -54,7 +54,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   : 'text-white/70 hover:text-white'
               }`}
             >
-              BLUEPRINT // CAD
+              DRAWINGS
             </button>
             <button
               onClick={() => setActiveTab('specs')}
@@ -100,7 +100,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                       {project.title}
                     </h2>
                     <p className="text-xs text-white/70">
-                      {project.location} // {project.coordinates}
+                      {project.location}
                     </p>
                   </div>
                   <div className="bg-ink/80 border border-white/10 px-3 py-1.5 text-xs text-right">
@@ -153,7 +153,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     </div>
                     <div className="p-4 bg-hairline/60 border border-hairline">
                       <span className="text-xs font-sans font-bold text-sage block mb-1">
-                        ENGINEERING SOLUTION:
+                        THE SOLUTION:
                       </span>
                       <p className="text-xs text-stone leading-relaxed font-sans">
                         {project.solution}
@@ -185,7 +185,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             <div className="space-y-4">
               <InteractiveBlueprintViewer
                 blueprintImage={project.blueprintImage}
-                title={`${project.title} // CAD WORKING ELEVATION`}
+                title={`${project.title} · Working Drawing`}
                 refCode={project.refCode}
                 scale={project.scale}
               />
@@ -197,7 +197,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             <div className="space-y-6 font-sans text-xs">
               <div className="border border-hairline bg-white overflow-hidden">
                 <div className="bg-ink-soft text-white p-3 font-bold flex justify-between">
-                  <span>TECHNICAL MATRIX // SPEC_SCHEDULE</span>
+                  <span>PROJECT SPECIFICATIONS</span>
                   <span className="text-brass-light">DOC_VER: 2.1</span>
                 </div>
                 <table className="w-full text-left border-collapse">
@@ -224,7 +224,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     </tr>
                     <tr>
                       <td className="p-3 bg-ivory font-bold text-stone">Building Control Stage</td>
-                      <td className="p-3 text-sage font-bold">APPROVED & STAMPED</td>
+                      <td className="p-3 text-sage font-bold">APPROVED</td>
                     </tr>
                   </tbody>
                 </table>
@@ -237,7 +237,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         {/* Footer Actions */}
         <div className="bg-ink/5 border-t border-hairline px-6 py-4 flex flex-wrap items-center justify-between gap-3 font-sans text-xs shrink-0">
           <div className="text-stone">
-            Need a similar architectural plan for your property?
+            Would you like a similar scheme considered for your property?
           </div>
 
           <div className="flex items-center space-x-3">
@@ -245,7 +245,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               onClick={() => onInitiateSimilar(project.title)}
               className="px-5 py-2.5 bg-ink hover:bg-ink-soft text-white font-bold flex items-center space-x-1.5 transition-colors cursor-pointer"
             >
-              <span>INITIATE SIMILAR PROJECT</span>
+              <span>Discuss a Similar Project</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

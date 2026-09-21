@@ -118,13 +118,13 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
 
         {/* Layer Filters */}
         <div className="flex flex-wrap items-center gap-2 text-[11px]">
-          <span className="text-stone hidden sm:inline">LAYERS:</span>
+          <span className="text-white/60 hidden sm:inline">LAYERS:</span>
           <button
             onClick={() => toggleLayer('structural')}
             className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.structural
                 ? 'bg-brass/20 text-brass-light border-brass/50'
-                : 'bg-transparent text-stone border-white/10 line-through'
+                : 'bg-transparent text-white/60 border-white/10 line-through'
             }`}
           >
             STRUCTURAL
@@ -134,7 +134,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
             className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.thermal
                 ? 'bg-brass/20 text-brass-light border-sage/50'
-                : 'bg-transparent text-stone border-white/10 line-through'
+                : 'bg-transparent text-white/60 border-white/10 line-through'
             }`}
           >
             THERMAL / PART L
@@ -144,7 +144,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
             className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.dimensions
                 ? 'bg-amber-900 text-amber-200 border-amber-500'
-                : 'bg-transparent text-stone border-white/10 line-through'
+                : 'bg-transparent text-white/60 border-white/10 line-through'
             }`}
           >
             DIMENSIONS
@@ -154,7 +154,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
             className={`px-2 py-0.5 border text-xs font-sans transition-colors ${
               activeLayers.mep
                 ? 'bg-purple-900 text-purple-200 border-purple-500'
-                : 'bg-transparent text-stone border-white/10 line-through'
+                : 'bg-transparent text-white/60 border-white/10 line-through'
             }`}
           >
             MEP / DRAINAGE
@@ -209,7 +209,7 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
           {/* Bottom Left: Scale Indicator */}
           <div className="absolute bottom-3 left-3 z-20 bg-ink-soft/90 border border-white/10 px-3 py-1.5 font-sans text-[11px] text-white/70 backdrop-blur-xs flex items-center space-x-3">
             <span className="text-brass-light font-bold">SCALE: {scale}</span>
-            <span className="text-stone">|</span>
+            <span className="text-white/60">|</span>
             <span>PROJECTION: ORTHOGRAPHIC</span>
           </div>
 
@@ -247,10 +247,10 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
           <div>
             <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
               <span className="text-[11px] font-sans text-brass-light uppercase tracking-wider font-bold">
-                NODE_INSPECTOR // CAD_SPEC
+                DRAWING NOTES
               </span>
-              <span className="text-[10px] font-sans text-stone">
-                {filteredAnnotations.length} NODES VISIBLE
+              <span className="text-[10px] font-sans text-white/60">
+                {filteredAnnotations.length} NOTES VISIBLE
               </span>
             </div>
 
@@ -273,21 +273,21 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
                 </div>
 
                 <div className="p-2.5 bg-ink/70 border border-brass/40 text-xs font-sans">
-                  <span className="text-stone block text-[10px]">ENGINEERING PARAMETER:</span>
+                  <span className="text-white/60 block text-[10px]">SPECIFICATION:</span>
                   <span className="text-white font-bold">{selectedNode.value}</span>
                 </div>
               </div>
             ) : (
-              <div className="p-6 text-center text-stone font-sans text-xs">
-                Click any hotspot pin (+) on the blueprint drawing to inspect structural connections and thermal specifications.
+              <div className="p-6 text-center text-white/60 font-sans text-xs">
+                Select a numbered point on the drawing to view its specification.
               </div>
             )}
           </div>
 
           {/* Quick Node Selector Pills */}
           <div className="border-t border-white/10 pt-3">
-            <span className="text-[10px] font-sans text-stone block mb-2">
-              JUMP TO ANNOTATION NODE:
+            <span className="text-[10px] font-sans text-white/60 block mb-2">
+              GO TO A NOTE:
             </span>
             <div className="grid grid-cols-2 gap-1.5">
               {DEFAULT_ANNOTATIONS.map((node) => (
@@ -296,8 +296,8 @@ export const InteractiveBlueprintViewer: React.FC<InteractiveBlueprintViewerProp
                   onClick={() => setSelectedNode(node)}
                   className={`text-left p-1.5 text-[10px] font-sans border transition-colors truncate ${
                     selectedNode?.id === node.id
-                      ? 'bg-brass/20/80 text-white border-brass font-bold'
-                      : 'bg-ink-soft text-stone border-white/10 hover:bg-ink-soft'
+                      ? 'bg-brass/20 text-white border-brass font-bold'
+                      : 'bg-ink-soft text-white/60 border-white/10 hover:bg-ink-soft'
                   }`}
                 >
                   {node.title.split('//')[0]}

@@ -1,6 +1,5 @@
 {
-  "name": "Studio Arch | Architectural Plans & Drafting",
-  "description": "Premier architectural drafting, planning permissions, building regulations, and structural engineering studio engineered with mathematical precision.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "name": "Masonry Architecture — Chartered Architectural Practice · London",
+  "description": "Masonry Architecture is a chartered architectural practice in London — designing and drawing exceptional homes with considered architecture, planning consent and builder-ready construction packages.",
+  "requestFramePermissions": []
 }

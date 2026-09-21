@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { PageView } from '../types';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ShoppingBag } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: PageView;
   setCurrentPage: (page: PageView) => void;
   onOpenEstimator: () => void;
+  onOpenCart: () => void;
+  cartCount: number;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   currentPage,
   setCurrentPage,
-  onOpenEstimator
+  onOpenEstimator,
+  onOpenCart,
+  cartCount
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -67,12 +71,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             id="brand-logo-btn"
           >
             <div className="w-11 h-11 bg-ink text-brass-light flex items-center justify-center font-display text-lg tracking-widest border border-brass/30 shadow-sm group-hover:bg-ink-soft transition-colors">
-              SA
+              MA
             </div>
             <div>
               <div className="flex items-center space-x-3">
-                <span className="font-display text-xl tracking-[0.12em] text-ink">
-                  STUDIO&nbsp;ARCH
+                <span className="font-display text-base sm:text-lg lg:text-xl tracking-[0.08em] text-ink">
+                  MASONRY&nbsp;ARCHITECTURE
                 </span>
               </div>
               <p className="text-[9px] font-sans uppercase tracking-[0.3em] text-stone mt-0.5">
@@ -101,7 +105,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               );
             })}
           </nav>
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center space-x-6">
+            <button
+              onClick={onOpenCart}
+              aria-label={`View cart (${cartCount} items)`}
+              className="relative p-2.5 border border-hairline text-ink hover:bg-ink/10 transition-colors cursor-pointer"
+            >
+              <ShoppingBag className="w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 min-w-4 h-4 px-1 bg-brass text-black text-[9px] font-bold rounded-full flex items-center justify-center">
+                  {cartCount > 9 ? '9+' : cartCount}
+                </span>
+              )}
+            </button>
             <button
               onClick={() => handleNavClick('contact')}
               className="px-6 py-2.5 bg-ink text-white text-xs font-semibold uppercase tracking-[0.2em] hover:bg-ink-soft transition-colors cursor-pointer"
@@ -110,15 +126,29 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 border border-hairline text-ink hover:bg-ink/10 focus:outline-none cursor-pointer"
-            aria-label="Toggle Navigation Menu"
-            id="mobile-nav-toggle-btn"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Mobile cart + toggle */}
+          <div className="flex items-center space-x-1.5 lg:hidden">
+            <button
+              onClick={onOpenCart}
+              aria-label={`View cart (${cartCount} items)`}
+              className="relative p-2 border border-hairline text-ink hover:bg-ink/10 transition-colors cursor-pointer"
+            >
+              <ShoppingBag className="w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 min-w-4 h-4 px-1 bg-brass text-black text-[9px] font-bold rounded-full flex items-center justify-center">
+                  {cartCount > 9 ? '9+' : cartCount}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 border border-hairline text-ink hover:bg-ink/10 focus:outline-none cursor-pointer"
+              aria-label="Toggle Navigation Menu"
+              id="mobile-nav-toggle-btn"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -152,6 +182,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="w-full py-2.5 px-2 text-xs font-sans font-medium border border-stone text-ink text-center bg-white"
             >
               Fee Guide
+            </button>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenCart();
+              }}
+              className="w-full py-2.5 px-2 text-xs font-sans font-medium border border-stone text-ink text-center bg-white"
+            >
+              View Cart{cartCount > 0 ? ` (${cartCount})` : ''}
             </button>
             <button
               onClick={() => handleNavClick('contact')}

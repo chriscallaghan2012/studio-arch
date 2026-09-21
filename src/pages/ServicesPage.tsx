@@ -1,20 +1,33 @@
 import React, { useState } from 'react';
 import { SERVICES } from '../data/mockData';
+import { PRODUCTS } from '../data/catalog';
+import { formatGBP } from '../lib/format';
 import { StructuralSchematicExplorer } from '../components/StructuralSchematicExplorer';
-import { Compass, FileCheck, ShieldCheck, Layers, Check, Calculator, ArrowRight, BookOpen, AlertCircle } from 'lucide-react';
+import { Compass, FileCheck, ShieldCheck, Layers, Check, Calculator, ArrowRight, BookOpen, AlertCircle, ShoppingCart } from 'lucide-react';
 
 interface ServicesPageProps {
   onOpenEstimator: () => void;
   onInitiateWithService: (serviceName: string) => void;
+  onAddToCart: (productId: string) => void;
 }
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({
   onOpenEstimator,
-  onInitiateWithService
+  onInitiateWithService,
+  onAddToCart
 }) => {
   const [activeServiceId, setActiveServiceId] = useState(SERVICES[0].id);
+  const [addedSku, setAddedSku] = useState<string | null>(null);
 
   const selectedService = SERVICES.find((s) => s.id === activeServiceId) || SERVICES[0];
+  const selectedProduct = PRODUCTS.find((p) => p.id === selectedService.id);
+
+  const handleAddToCart = () => {
+    if (!selectedService) return;
+    onAddToCart(selectedService.id);
+    setAddedSku(selectedService.id);
+    window.setTimeout(() => setAddedSku(null), 2000);
+  };
 
   const approvedParts = [
     { code: 'Part A', title: 'Structure', desc: 'Load-bearing capacity, disproportionate collapse & foundations' },
@@ -120,11 +133,26 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
               {/* Action */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
+                {selectedProduct && (
+                  <div className="px-3.5 py-2 bg-brass/10 border border-brass/40 text-brass font-sans text-sm font-bold">
+                    {formatGBP(selectedProduct.priceGBP)}
+                    <span className="text-[10px] text-stone block -mt-0.5">fixed package fee</span>
+                  </div>
+                )}
+                <button
+                  onClick={handleAddToCart}
+                  className={`px-5 py-3 ${addedSku === selectedService.id ? 'bg-sage hover:bg-sage/80 text-white' : 'bg-brass hover:bg-brass-light text-black'} font-sans text-xs font-bold uppercase tracking-wider flex items-center space-x-2 transition-colors cursor-pointer`}
+                >
+                  <ShoppingCart className="w-3.5 h-3.5" />
+                  <span>
+                    {addedSku === selectedService.id ? 'Added to Cart ✓' : 'Add to Cart'}
+                  </span>
+                </button>
                 <button
                   onClick={() => onInitiateWithService(selectedService.title)}
-                  className="px-6 py-3 bg-ink hover:bg-ink-soft text-white font-sans text-xs font-bold uppercase tracking-wider flex items-center space-x-2 transition-colors cursor-pointer"
+                  className="px-5 py-3 bg-ink hover:bg-ink-soft text-white font-sans text-xs font-bold uppercase tracking-wider flex items-center space-x-2 transition-colors cursor-pointer"
                 >
-                  <span>REQUEST PROPOSAL</span>
+                  <span>Request Proposal</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

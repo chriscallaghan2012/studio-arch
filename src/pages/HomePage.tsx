@@ -35,9 +35,9 @@ export const HomePage: React.FC<HomePageProps> = ({
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Engineering Metadata Eyebrow */}
+          {/* Studio Eyebrow */}
           <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 bg-ink-soft border border-white/10 text-brass-light text-xs font-sans mb-6">
-            <span className="w-2 h-2 rounded-full bg-brass animate-ping inline-block"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-brass inline-block"></span>
             <span className="font-bold">The Architectural Studio</span>
             <span className="text-white/40">|</span>
             <span className="text-white/70">LONDON &amp; THE UNITED KINGDOM</span>
@@ -72,7 +72,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <button
                   onClick={onOpenEstimator}
                   id="hero-estimator-btn"
-                  className="px-6 py-3.5 bg-white hover:bg-hairline/60 text-ink border border-white/10 font-sans text-xs font-bold uppercase tracking-wider flex items-center space-x-2 shadow-sm transition-all cursor-pointer"
+                  className="px-6 py-3.5 bg-white hover:bg-hairline/60 text-ink border border-hairline font-sans text-xs font-bold uppercase tracking-wider flex items-center space-x-2 shadow-sm transition-all cursor-pointer"
                 >
                   <Calculator className="w-4 h-4 text-brass" />
                   <span>Request a Fee Guide</span>
@@ -96,35 +96,34 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
 
-            {/* Right Col: Blueprint CAD Elevation Preview Card */}
+            {/* Right Col: Featured Project Photo */}
             <div className="lg:col-span-5 relative">
-              <div className="bg-ink-soft border border-white/10 p-2 shadow-2xl relative overflow-hidden group">
-                {/* Crosshairs */}
-                <div className="absolute top-2 left-2 text-[9px] font-sans text-brass-light z-10 bg-black/70 px-1.5 py-0.5">
-                  The Glass Pavilion · Hampstead, London
-                </div>
-                <div className="relative h-80 sm:h-96 w-full overflow-hidden bg-ink">
+              <div className="bg-white border border-hairline p-2 shadow-2xl relative overflow-hidden group">
+                <div className="relative h-80 sm:h-96 w-full overflow-hidden bg-ivory">
                   <img
-                    src="https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0"
-                    alt="Technical Blueprint Cad"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover filter contrast-125 brightness-110 group-hover:scale-105 transition-transform duration-500"
+                    src="/images/hero-03.jpg"
+                    alt="The Glass Pavilion — residential extension"
+                    className="w-full h-full object-cover saturate-[0.98] group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-blueprint-grid-dense opacity-40 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                    <span className="text-white/90 font-sans text-xs tracking-wide">The Glass Pavilion · Hampstead, London</span>
+                    <span className="text-[10px] text-brass-light font-sans uppercase tracking-[0.22em]">Est. 2024</span>
+                  </div>
                 </div>
 
                 {/* Card Title Block strip */}
-                <div className="bg-ink-soft p-3 text-white font-sans text-xs flex justify-between items-center border-t border-white/10">
+                <div className="bg-white p-3 font-sans text-xs flex justify-between items-center border-t border-hairline">
                   <div>
-                    <span className="font-bold block">The Glass Pavilion</span>
-                    <span className="text-[10px] text-brass-light">Hampstead, London · 142 m²</span>
+                    <span className="font-bold text-ink block">The Glass Pavilion</span>
+                    <span className="text-[10px] text-stone">Hampstead, London · 142 m²</span>
                   </div>
                   <button
                     onClick={() => onSelectProject(PROJECTS[0])}
-                    className="px-2.5 py-1 bg-brass hover:bg-brass text-black text-[11px] font-bold flex items-center space-x-1 transition-colors"
+                    className="px-2.5 py-1 bg-ink hover:bg-ink-soft text-white text-[11px] font-bold flex items-center space-x-1 transition-colors"
                   >
                     <span>View</span>
-                    <ArrowUpRight className="w-3 h-3" />
+                    <ArrowUpRight className="w-3 h-3 text-brass-light" />
                   </button>
                 </div>
               </div>

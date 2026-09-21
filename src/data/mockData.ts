@@ -7,7 +7,7 @@ export const REVISION_TAG = 'REV_4.2.0 // 2024_STABLE';
 export const PROJECTS: Project[] = [
   {
     id: 'glass-pavilion',
-    refCode: 'SA-RES-084',
+    refCode: 'MA-RES-084',
     title: 'The Glass Pavilion',
     category: 'residential',
     categoryLabel: 'Residential Extension',
@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
     areaSqm: 142,
     scale: '1:50',
     status: 'COMPLETED',
-    heroImage: 'https://lh3.googleusercontent.com/aida/AEtjO1UOCdC4Sf192g-ZXFwfxKsWun0bw8NI0v-FA-kS1IUiG20TH9Awy8Dqet1mUk59tdaqIjDOyKcwOjtP63q2hiU9a0bFn9AovVgto2Be2pOysgPyZEgga1U2NYvRA8XMHuC0KbP4fxj1prYhCjswFjX54WEhX3pEBT0YiPZ4_T6cb3gp2EBt7-gpIrhgRsIrMgUJ-RsayN37Pprl-WTT0Pw3eETMqFCqP9vwKxIeowx57cdlIEYH98Rwfs6g',
+    heroImage: '/images/hero-02.jpg',
     blueprintImage: 'https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0',
     galleryImages: [
       'https://lh3.googleusercontent.com/aida/AEtjO1UOCdC4Sf192g-ZXFwfxKsWun0bw8NI0v-FA-kS1IUiG20TH9Awy8Dqet1mUk59tdaqIjDOyKcwOjtP63q2hiU9a0bFn9AovVgto2Be2pOysgPyZEgga1U2NYvRA8XMHuC0KbP4fxj1prYhCjswFjX54WEhX3pEBT0YiPZ4_T6cb3gp2EBt7-gpIrhgRsIrMgUJ-RsayN37Pprl-WTT0Pw3eETMqFCqP9vwKxIeowx57cdlIEYH98Rwfs6g',
@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'urban-infill-study',
-    refCode: 'SA-COM-019',
+    refCode: 'MA-COM-019',
     title: 'Urban Infill Study',
     category: 'commercial',
     categoryLabel: 'Commercial & Mixed-Use',
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     areaSqm: 380,
     scale: '1:100',
     status: 'COMPLETED',
-    heroImage: 'https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0',
+    heroImage: '/images/hero-01.jpg',
     blueprintImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAtnkL1jPaOd0DnvVjLsaBBe_4CUnUcKJ8Uub1_p67zCBFXjXXz5norPLS3Qt69kD87zfs7RmwOX9EXHuNiAAQ4EPtW_SxWUtLzTcf7C4Ovl1cakgukDVmISzjEcsdqP-3eS906mbsVsLoqNElSRhcFLGYOXGRP9D8VEH6EE_u-0J5OwkG6kiF_HwIh1fD7pKDTfr0Kuw5GvzyIOot4H7r0avaGJz-fJQ_v9YzpHemB3U4kN8CRpmfwQA',
     galleryImages: [
       'https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0',
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'heritage-extension',
-    refCode: 'SA-RES-092',
+    refCode: 'MA-RES-092',
     title: 'Heritage Extension // Modernist Annex',
     category: 'heritage',
     categoryLabel: 'Conservation & Heritage',
@@ -80,7 +80,7 @@ export const PROJECTS: Project[] = [
     areaSqm: 210,
     scale: '1:50',
     status: 'COMPLETED',
-    heroImage: 'https://lh3.googleusercontent.com/aida/AEtjO1Vm4CJkv_b4q-h_ywnAxUO5T1EW3-Kipu7LFG6APXrey-nJPVtRa5po_DrekW_WS-WzIjxgyjbSA3HJ7mrtNHNBSdet6ohSbdZ3PWcYhNAzupbBUbaGDd5bEfN3hDQusFLzu5E8TzWlAoVzl-AVzqCiKkTAic9-2ujr3tbkKKZAUvuGy0OoToUcSNKP78AdvAToA-jd-W9N-oqDNPj8FQ92g5eDRMcgZR9vU7We7KBidzbdQS2KfJxO-vU',
+    heroImage: '/images/studio.jpg',
     blueprintImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB2Eqc94ZSkJTk08OhWKdMI0VvGS55SjeQSTbiP7Qbuf_R2S74PcAK45PvJT-QUqcxmWUQ3Hz0Xkj0nHjzZXN7osHM9GV1jNgcnYJ3KzX1erXJLrGByhifLwDvPNKbQPrRwZQDlhRpv3Vmr0HbEfk6C3NTNrWqo1Jzq_iYS2Omwx81hDi8tQje5O2lPfMdg7V2icJzgkDUZJbsCNY0xl5r7BpEPxwyt8kZD-e3NB7ZRMW4fOPld70GZJw',
     galleryImages: [
       'https://lh3.googleusercontent.com/aida/AEtjO1Vm4CJkv_b4q-h_ywnAxUO5T1EW3-Kipu7LFG6APXrey-nJPVtRa5po_DrekW_WS-WzIjxgyjbSA3HJ7mrtNHNBSdet6ohSbdZ3PWcYhNAzupbBUbaGDd5bEfN3hDQusFLzu5E8TzWlAoVzl-AVzqCiKkTAic9-2ujr3tbkKKZAUvuGy0OoToUcSNKP78AdvAToA-jd-W9N-oqDNPj8FQ92g5eDRMcgZR9vU7We7KBidzbdQS2KfJxO-vU',
@@ -101,7 +101,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'monolithic-residence',
-    refCode: 'SA-RES-077',
+    refCode: 'MA-RES-077',
     title: 'Monolithic Concrete Residence',
     category: 'new-builds',
     categoryLabel: 'New Build Residential',
@@ -223,7 +223,7 @@ export const PROCESS_STAGES: ProcessStage[] = [
     stepNumber: '01',
     title: 'Consultation & Briefing',
     duration: 'Week 1',
-    deliverableCode: 'DOC_REF: SA-PRC-001',
+    deliverableCode: 'DOC_REF: MA-PRC-001',
     summary: 'Initial site assessment, spatial objective scoping, and regulatory feasibility analysis.',
     details: [
       'Comprehensive in-person or digital site review',
@@ -239,7 +239,7 @@ export const PROCESS_STAGES: ProcessStage[] = [
     stepNumber: '02',
     title: 'Site Analysis & Laser Survey',
     duration: 'Week 1 - 2',
-    deliverableCode: 'DOC_REF: SA-PRC-002',
+    deliverableCode: 'DOC_REF: MA-PRC-002',
     summary: 'High-precision 3D point-cloud and laser measured survey of existing structures and boundary levels.',
     details: [
       'Millimetre-accurate 3D Leica laser scan of interior and exterior envelope',
@@ -255,7 +255,7 @@ export const PROCESS_STAGES: ProcessStage[] = [
     stepNumber: '03',
     title: 'Concept Architectural Design',
     duration: 'Week 3 - 4',
-    deliverableCode: 'DOC_REF: SA-PRC-003',
+    deliverableCode: 'DOC_REF: MA-PRC-003',
     summary: 'Spatial layout exploration, 3D volumetric modeling, and material formulation.',
     details: [
       'Development of 2-3 spatial layout design options',
@@ -271,7 +271,7 @@ export const PROCESS_STAGES: ProcessStage[] = [
     stepNumber: '04',
     title: 'Technical Drawings & Spec',
     duration: 'Week 5 - 6',
-    deliverableCode: 'DOC_REF: SA-PRC-004',
+    deliverableCode: 'DOC_REF: MA-PRC-004',
     summary: 'Execution of complete statutory 2D working drawings, building sections, and engineering.',
     details: [
       'Comprehensive general arrangement drawings at 1:50 and 1:100',
@@ -287,7 +287,7 @@ export const PROCESS_STAGES: ProcessStage[] = [
     stepNumber: '05',
     title: 'Planning Submission Support',
     duration: 'Week 7 - 8',
-    deliverableCode: 'DOC_REF: SA-PRC-005',
+    deliverableCode: 'DOC_REF: MA-PRC-005',
     summary: 'Preparation of formal council portal submission, Design & Access statements, and officer management.',
     details: [
       'Ordnance survey licensing and site location boundary mapping',
@@ -303,7 +303,7 @@ export const PROCESS_STAGES: ProcessStage[] = [
     stepNumber: '06',
     title: 'Project Handover & Building Control',
     duration: 'Week 9+',
-    deliverableCode: 'DOC_REF: SA-PRC-006',
+    deliverableCode: 'DOC_REF: MA-PRC-006',
     summary: 'Final contractor-ready construction package issue, Building Control sign-off, and site support.',
     details: [
       'Issuing stamped Building Control Approved Plans',
@@ -357,7 +357,7 @@ export const FAQS: FAQItem[] = [
     id: 'faq-6',
     category: 'Building Regs',
     question: 'What are the updated Part L (Energy & Carbon) requirements for home extensions?',
-    answer: 'The updated Approved Document Part L requires significantly improved thermal U-values for all new building elements (e.g., walls <= 0.18 W/m²K, flat roofs <= 0.15 W/m²K, and glazing <= 1.2 W/m²K). Furthermore, glazing area is restricted to a maximum of 25% of the total new floor area unless an overarching SAP carbon-offset calculation is proved. Studio Arch calculates complete Part L energy models to ensure compliance.',
+    answer: 'The updated Approved Document Part L requires significantly improved thermal U-values for all new building elements (e.g., walls <= 0.18 W/m²K, flat roofs <= 0.15 W/m²K, and glazing <= 1.2 W/m²K). Furthermore, glazing area is restricted to a maximum of 25% of the total new floor area unless an overarching SAP carbon-offset calculation is proved. Masonry Architecture calculates complete Part L energy models to ensure compliance.',
     docRef: 'ENERGY_REF: APPROVED DOC L 2022'
   }
 ];
@@ -367,10 +367,10 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 't-1',
     clientName: 'Alexander Vance',
     clientRole: 'Managing Director, Horizon Developments',
-    projectRef: 'SA-COM-019',
+    projectRef: 'MA-COM-019',
     projectTitle: 'Shoreditch Urban Infill',
     rating: 5,
-    quote: 'The level of technical precision Studio Arch brought to our complex five-storey CLT infill was exceptional. Their drawings passed Hackney Planning with zero objections on first submission, and our structural contractor commended the clarity of the junction specs.',
+    quote: 'The level of technical precision Masonry Architecture brought to our complex five-storey CLT infill was exceptional. Their drawings passed Hackney Planning with zero objections on first submission, and our structural contractor commended the clarity of the junction specs.',
     year: '2023',
     location: 'Shoreditch, London'
   },
@@ -378,10 +378,10 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 't-2',
     clientName: 'Eleanor & Marcus Davies',
     clientRole: 'Private Homeowners',
-    projectRef: 'SA-RES-084',
+    projectRef: 'MA-RES-084',
     projectTitle: 'The Glass Pavilion',
     rating: 5,
-    quote: 'Navigating Camden planning in a conservation zone felt daunting until we hired Studio Arch. Their 3D daylight study and elegant structural glass cantilever drawings sailed through council in 8 weeks flat. Truly architectural craftsmanship.',
+    quote: 'Navigating Camden planning in a conservation zone felt daunting until we hired Masonry Architecture. Their 3D daylight study and elegant structural glass cantilever drawings sailed through council in 8 weeks flat. Truly architectural craftsmanship.',
     year: '2024',
     location: 'Hampstead, London'
   },
@@ -389,7 +389,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 't-3',
     clientName: 'Jonathan Croft',
     clientRole: 'Heritage Property Restorer',
-    projectRef: 'SA-RES-092',
+    projectRef: 'MA-RES-092',
     projectTitle: 'Cotswolds Modernist Annex',
     rating: 5,
     quote: 'Their ability to balance historic oolitic stone textures with razor-thin zinc details is unmatched. The building control package was airtight—every Part A, B, and L requirement was documented down to the millimeter.',

@@ -135,10 +135,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 bg-ink-soft/90 text-brass-light font-sans text-[10px] px-2 py-0.5 border border-white/10">
-                    {proj.refCode}
+                    {proj.location}
                   </div>
                   <div className="absolute bottom-3 right-3 bg-ink/80 text-brass-light font-sans text-[10px] px-2 py-0.5">
-                    {proj.areaSqm} m² // {proj.scale}
+                    {proj.areaSqm} m² · {proj.scale}
                   </div>
                 </div>
 
@@ -189,10 +189,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
           <table className="w-full text-left border-collapse font-sans text-xs">
             <thead>
               <tr className="bg-ink-soft text-white border-b border-white/10">
-                <th className="p-3.5 font-bold">DOC REF</th>
-                <th className="p-3.5 font-bold">PROJECT TITLE</th>
+                <th className="p-3.5 font-bold">REF</th>
+                <th className="p-3.5 font-bold">PROJECT</th>
                 <th className="p-3.5 font-bold">CATEGORY</th>
-                <th className="p-3.5 font-bold">BOROUGH / LOCATION</th>
+                <th className="p-3.5 font-bold">LOCATION</th>
                 <th className="p-3.5 font-bold">AREA</th>
                 <th className="p-3.5 font-bold">STATUS</th>
                 <th className="p-3.5 font-bold text-right">ACTION</th>
@@ -216,7 +216,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                       onClick={() => onSelectProject(proj)}
                       className="px-3 py-1 bg-ink text-white text-[11px] font-bold hover:bg-ink-soft transition-colors"
                     >
-                      INSPECT
+                      VIEW
                     </button>
                   </td>
                 </tr>

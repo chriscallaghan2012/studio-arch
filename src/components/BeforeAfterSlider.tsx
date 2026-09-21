@@ -55,7 +55,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       <div className="bg-ink-soft px-4 py-2.5 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
         <div className="flex items-center space-x-3">
           <span className="bg-brass/20 text-brass-light border border-brass/40 px-2 py-0.5 font-bold">
-            INTERACTIVE SLIDER
+            CONSIDERED COMPARISON
           </span>
           <span className="font-bold text-white tracking-wider">{projectTitle}</span>
           <span className="text-stone">[{projectRef}]</span>
@@ -63,7 +63,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         <div className="flex items-center space-x-4 text-[11px] text-white/70">
           <span className="hidden sm:inline">LOC: {location}</span>
           <span className="text-stone">|</span>
-          <span className="text-brass-light font-bold">SPLIT: {Math.round(sliderPosition)}% REALITY</span>
+          <span className="text-brass-light font-bold">VIEW: {Math.round(sliderPosition)}% BUILT</span>
         </div>
       </div>
 
@@ -90,13 +90,13 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           {/* Blueprint Crosshair Overlays */}
           <div className="absolute inset-0 bg-blueprint-grid-dense opacity-30 pointer-events-none"></div>
           
-          <div className="absolute top-4 left-4 z-10 bg-ink-soft/90 border border-brass/50/40 px-3 py-1.5 backdrop-blur-xs font-sans text-[11px] text-brass-light">
+          <div className="absolute top-4 left-4 z-10 bg-ink-soft/90 border border-brass/40 px-3 py-1.5 backdrop-blur-xs font-sans text-[11px] text-brass-light">
             <span className="w-2 h-2 rounded-full bg-brass inline-block mr-1.5"></span>
-            <span>LAYER 01: 2D CAD SCHEMATIC (1:50)</span>
+            <span>DRAWING · 1:50</span>
           </div>
 
           <div className="absolute bottom-4 left-4 z-10 bg-ink-soft/90 border border-white/10 px-3 py-1 text-[10px] font-sans text-stone hidden sm:block">
-            GRID: 1000mm // BS 1192 COMPLIANT
+            1000MM GRID · BS 1192 COMPLIANT
           </div>
         </div>
 
@@ -112,13 +112,13 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             className="absolute inset-0 w-full h-full object-cover"
           />
           
-          <div className="absolute top-4 right-4 z-10 bg-ink/80 border border-sage/50/50 px-3 py-1.5 backdrop-blur-xs font-sans text-[11px] text-brass-light">
+          <div className="absolute top-4 right-4 z-10 bg-ink/80 border border-sage/40 px-3 py-1.5 backdrop-blur-xs font-sans text-[11px] text-brass-light">
             <span className="w-2 h-2 rounded-full bg-brass inline-block mr-1.5 animate-pulse"></span>
-            <span>LAYER 02: EXECUTED STRUCTURE</span>
+            <span>THE BUILT RESULT</span>
           </div>
 
           <div className="absolute bottom-4 right-4 z-10 bg-ink/80 border border-white/10 px-3 py-1 text-[10px] font-sans text-white/70 hidden sm:block">
-            STATUS: HANDOVER COMPLETE // CERTIFIED
+            STATUS: CERTIFIED
           </div>
         </div>
 
@@ -146,7 +146,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       <div className="bg-ink-soft px-4 py-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
         <div className="flex items-center space-x-2 text-stone">
           <Compass className="w-4 h-4 text-brass-light" />
-          <span>DRAG HANDLE OR JUMP TO VIEW:</span>
+          <span>DRAG THE HANDLE, OR JUMP TO A VIEW:</span>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
@@ -158,7 +158,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                 : 'bg-ink text-white/70 border-white/10 hover:bg-ink-soft'
             }`}
           >
-            100% REALITY
+            100% BUILT
           </button>
           <button
             onClick={() => setSliderPosition(50)}
@@ -168,7 +168,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                 : 'bg-ink text-white/70 border-white/10 hover:bg-ink-soft'
             }`}
           >
-            50% OVERLAY
+            50% DRAWING / BUILT
           </button>
           <button
             onClick={() => setSliderPosition(100)}
@@ -178,7 +178,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                 : 'bg-ink text-white/70 border-white/10 hover:bg-ink-soft'
             }`}
           >
-            100% CAD BLUEPRINT
+            100% DRAWING
           </button>
         </div>
       </div>

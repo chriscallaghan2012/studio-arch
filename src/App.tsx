@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { PageView, Project } from './types';
+import { CartProvider, useCart } from './context/CartContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { CartDrawer } from './components/CartDrawer';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -9,11 +11,21 @@ import { ProcessPage } from './pages/ProcessPage';
 import { AboutPage } from './pages/AboutPage';
 import { FaqPage } from './pages/FaqPage';
 import { ContactPage } from './pages/ContactPage';
+import { CheckoutPage } from './pages/CheckoutPage';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { QuoteEstimatorModal } from './components/QuoteEstimatorModal';
-import { AIAssistantChat } from './components/AIAssistantChat';
 
 export const App: React.FC = () => {
+  return (
+    <CartProvider>
+      <AppRouter />
+    </CartProvider>
+  );
+};
+
+const AppRouter: React.FC = () => {
+  const { openCart, count, add } = useCart();
+
   const [currentPage, setCurrentPage] = useState<PageView>('home');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isEstimatorOpen, setIsEstimatorOpen] = useState(false);
@@ -46,14 +58,26 @@ export const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleGoCheckout = () => {
+    setCurrentPage('checkout');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleContinueShopping = () => {
+    setCurrentPage('home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-ivory text-ink selection:bg-brass selection:text-white">
-      
+
       {/* Sticky Architectural Header */}
       <Navbar
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         onOpenEstimator={handleOpenEstimator}
+        onOpenCart={openCart}
+        cartCount={count}
       />
 
       {/* Primary Page Canvas */}
@@ -78,6 +102,7 @@ export const App: React.FC = () => {
           <ServicesPage
             onOpenEstimator={handleOpenEstimator}
             onInitiateWithService={handleInitiateWithService}
+            onAddToCart={(productId: string) => add(productId)}
           />
         )}
 
@@ -117,6 +142,10 @@ export const App: React.FC = () => {
             onOpenEstimator={handleOpenEstimator}
           />
         )}
+
+        {currentPage === 'checkout' && (
+          <CheckoutPage onContinueShopping={handleContinueShopping} />
+        )}
       </main>
 
       {/* Blueprint Title Block Footer */}
@@ -140,8 +169,8 @@ export const App: React.FC = () => {
         setCurrentPage={setCurrentPage}
       />
 
-      {/* AI Design Assistant — floating chat widget */}
-      <AIAssistantChat />
+      {/* Slide-over Cart Drawer */}
+      <CartDrawer onCheckout={handleGoCheckout} />
 
     </div>
   );

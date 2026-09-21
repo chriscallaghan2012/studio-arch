@@ -147,7 +147,7 @@ export const ProcessPage: React.FC<ProcessPageProps> = ({
               </div>
               <div className="relative h-64 w-full overflow-hidden bg-black">
                 <img
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1V3viWW6MAR6F-Y0qtWlwk01uV2UsRbdj7xPRw-IKVh_4V6t4zVXKg6Y15hyYbsPuifAXmokMgbXBQ5nEj5NOeMADqIk8lR5RPLm2AY-wCFqi6ZT78JVahSWurHJ2mYtDKm7q7iz5FGazGlKpfxUs2PzdTjj6JfcQhprw3p3ISvsR2kJeeUnC2Z43BRGo_Eii7MHVUmXS9PESec4FGOppGnwGT1kgTc483N-_3Gy7QZddKJ1Ps1I9QiVy0"
+                  src="/images/drawing-01.png"
                   alt="Process Schematic CAD"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover filter contrast-125"

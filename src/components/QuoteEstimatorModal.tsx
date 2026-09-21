@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { QuoteCalculationInput, QuoteResult, PageView } from '../types';
 import { X, Calculator, ArrowRight, CheckCircle2, FileText, Clock, HelpCircle, ShieldCheck, Download } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
 interface QuoteEstimatorModalProps {
   isOpen: boolean;
@@ -83,13 +82,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
   if (!isOpen) return null;
 
   const handleTransferToContact = () => {
-    confetti({
-      particleCount: 50,
-      spread: 60,
-      origin: { y: 0.6 }
-    });
-
-    const briefText = `PROJECT SCOPE ESTIMATE: ${params.projectType.replace('_', ' ').toUpperCase()} (${params.floorAreaSqm} m²) | Zone: ${params.planningZone.toUpperCase()} | Estimated Fee: £${result.totalEstimated.toLocaleString()} | Deliverables: ~${result.deliverablesCount} Sheets`;
+    const briefText = `Fee estimate — ${params.projectType.replace(/_/g, ' ')} (${params.floorAreaSqm} m²) · ${params.planningZone} planning zone · est. £${result.totalEstimated.toLocaleString()} · ~${result.deliverablesCount} drawing sheets`;
     onApplyToEnquiry(briefText);
     if (setCurrentPage) {
       setCurrentPage('contact');
@@ -117,7 +110,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                 ARCHITECTURAL FEE & SCOPE CALCULATOR
               </h3>
               <p className="text-[11px] font-sans text-brass-light">
-                DOC_REF: CALC-2024 // INSTANT ACCREDITED ESTIMATION
+                FEE GUIDE · 2026
               </p>
             </div>
           </div>
@@ -222,7 +215,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
             {/* 4. Optional Packages & Add-ons */}
             <div className="space-y-2.5 pt-2 border-t border-hairline">
               <label className="block text-xs font-sans font-bold text-stone uppercase tracking-wider">
-                04. INTEGRATED ENGINEERING TIERS
+                04. INTEGRATED ENGINEERING
               </label>
               
               <label className="flex items-center justify-between p-2.5 bg-white border border-hairline cursor-pointer hover:bg-ivory">
@@ -287,7 +280,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                       Priority Fast-Track Dispatch (48hr Survey)
                     </span>
                     <span className="text-[10px] text-stone font-sans">
-                      Accelerated CAD drafting turnaround queue
+                      Accelerated drafting turnaround
                     </span>
                   </div>
                 </div>
@@ -305,13 +298,13 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
             <div>
               <div className="border-b border-white/10 pb-3 mb-4">
                 <span className="text-[10px] font-sans text-brass-light uppercase tracking-widest block">
-                  SUMMARY BREAKDOWN // METRIC_ESTIMATE
+                  SUMMARY OF FEE
                 </span>
                 <div className="mt-2 flex items-baseline justify-between">
-                  <span className="text-xs text-stone font-sans">TOTAL ESTIMATED FEE:</span>
+                  <span className="text-xs text-white/60 font-sans">TOTAL ESTIMATED FEE:</span>
                   <span className="text-2xl sm:text-3xl font-bold font-sans text-brass-light">
                     £{result.totalEstimated.toLocaleString()}
-                    <span className="text-xs text-stone font-normal ml-1">+VAT</span>
+                    <span className="text-xs text-white/60 font-normal ml-1">+VAT</span>
                   </span>
                 </div>
               </div>
@@ -340,7 +333,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                 )}
                 {params.timelineSpeed === 'expedited' && (
                   <div className="flex justify-between text-brass-light">
-                    <span>Expedited Fast-Track Dispatch:</span>
+                    <span>Expedited Turnaround:</span>
                     <span>£{result.expeditedFee.toLocaleString()}</span>
                   </div>
                 )}
@@ -349,7 +342,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
               {/* Deliverable Metrics */}
               <div className="mt-4 grid grid-cols-2 gap-3 text-xs font-sans">
                 <div className="p-2.5 bg-ink-soft border border-white/10">
-                  <div className="flex items-center text-stone text-[10px] mb-1">
+                  <div className="flex items-center text-white/60 text-[10px] mb-1">
                     <Clock className="w-3 h-3 mr-1 text-brass-light" />
                     <span>TIMELINE:</span>
                   </div>
@@ -357,15 +350,15 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                 </div>
 
                 <div className="p-2.5 bg-ink-soft border border-white/10">
-                  <div className="flex items-center text-stone text-[10px] mb-1">
+                  <div className="flex items-center text-white/60 text-[10px] mb-1">
                     <FileText className="w-3 h-3 mr-1 text-brass-light" />
                     <span>DRAWING SHEETS:</span>
                   </div>
-                  <span className="text-white font-bold block">~{result.deliverablesCount} CAD Sets</span>
+                  <span className="text-white font-bold block">~{result.deliverablesCount} Drawing Sheets</span>
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-ink/40 border border-brass/40/60 text-[11px] font-sans text-brass-light">
+              <div className="mt-4 p-3 bg-ink/40 border border-brass/40 text-[11px] font-sans text-brass-light">
                 <div className="flex items-start space-x-2">
                   <ShieldCheck className="w-4 h-4 text-brass-light shrink-0 mt-0.5" />
                   <span>
@@ -382,7 +375,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
                 onClick={handleTransferToContact}
                 className="w-full py-3 bg-brass hover:bg-brass text-black font-sans text-xs font-bold uppercase tracking-wider flex items-center justify-center space-x-2 shadow-lg transition-colors cursor-pointer"
               >
-                <span>INITIATE PROJECT WITH THIS SCOPE</span>
+                <span>BEGIN PROJECT WITH THIS SCOPE</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -393,7 +386,7 @@ export const QuoteEstimatorModal: React.FC<QuoteEstimatorModalProps> = ({
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>
-                  {downloaded ? 'ESTIMATE SPECIFICATION SAVED' : 'SAVE ITEMIZED ESTIMATE (PDF)'}
+                  {downloaded ? 'ESTIMATE SAVED' : 'SAVE FEE ESTIMATE (PDF)'}
                 </span>
               </button>
             </div>

@@ -63,25 +63,25 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 <Phone className="w-4 h-4 text-brass-light shrink-0 mt-0.5" />
                 <div>
                   <span className="text-white font-bold block">+44 (0) 20 7946 0842</span>
-                  <span className="text-[10px] text-stone">Direct Line</span>
+                  <span className="text-[10px] text-white/60">Direct Line</span>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3 pt-2 border-t border-white/10">
                 <Mail className="w-4 h-4 text-brass-light shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-white font-bold block">plans@studioarch.co.uk</span>
-                  <span className="text-[10px] text-stone">Project Enquiries</span>
+                  <span className="text-white font-bold block">plans@masonryarchitecture.com</span>
+                  <span className="text-[10px] text-white/60">Project Enquiries</span>
                 </div>
               </div>
             </div>
 
             <div className="p-3 bg-ink-soft border border-white/10 text-[10px] space-y-1">
-              <div className="flex justify-between text-stone">
+              <div className="flex justify-between text-white/70">
                 <span>HOURS</span>
                 <span>Mon — Fri · 09:00 — 18:00</span>
               </div>
-              <div className="flex justify-between text-stone">
+              <div className="flex justify-between text-white/70">
                 <span>RESPONSE</span>
                 <span className="text-brass-light font-bold">Within 4 Working Hours</span>
               </div>
